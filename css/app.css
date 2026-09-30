@@ -352,19 +352,20 @@ button, input { font-family: inherit; color: inherit; }
 
 .home-project-row {
   display: flex;
-  align-items: flex-start;
-  gap: 8px;
+  align-items: center;
+  gap: 6px;
   width: 100%;
   min-width: 0;
 }
 
 .home-project {
-  flex: 1 1 0;
+  flex: 0 1 auto;
   min-width: 0;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.2px;
-  line-height: 1.3;
+  letter-spacing: 0;
+  line-height: 22px;
+  white-space: nowrap;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
 }
 
@@ -425,7 +426,7 @@ button, input { font-family: inherit; color: inherit; }
 
 .home-full {
   flex-shrink: 0;
-  margin-left: 0;
+  margin-left: auto;
   height: 22px;
   padding: 0 10px;
   border: 0;
