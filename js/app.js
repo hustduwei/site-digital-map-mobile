@@ -39,7 +39,7 @@
   ];
 
   const cameras = [
-    { id: "gate", name: "XX项目大门入口", img: "img/site-map.jpg", pos: "pos-left", listed: true },
+    { id: "gate", name: "向阳村项目大门入口", img: "img/site-map.jpg", pos: "pos-left", listed: true },
     { id: "rebar", name: "钢筋加工区", img: "img/site-map.jpg", pos: "pos-right" },
     { id: "pier", name: "3#墩作业面", img: "img/site-map.jpg", pos: "pos-bottom" },
     { id: "yard", name: "场区全景", img: "img/site-map.jpg", pos: "" }
