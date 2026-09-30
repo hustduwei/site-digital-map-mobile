@@ -353,15 +353,22 @@ button, input { font-family: inherit; color: inherit; }
 .home-project-row {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   width: 100%;
   min-width: 0;
 }
 
-.home-project {
-  flex: 0 1 auto;
+.home-project-main {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   min-width: 0;
-  font-size: 13px;
+  flex: 0 1 auto;
+}
+
+.home-project {
+  flex: 0 0 auto;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 0;
   line-height: 22px;
