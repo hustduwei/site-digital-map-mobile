@@ -1,0 +1,346 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>工地数字地图移动端标准版</title>
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+  <div class="stage">
+    <div class="stage-title">工地数字地图 · 移动端标准版</div>
+    <div class="phone">
+      <div class="phone-screen">
+        <div class="map-land" id="mapLand" aria-hidden="true">
+          <div class="map-land-stage">
+            <div class="map-land-fit">
+              <img src="img/site-map.jpg" alt="工地数字地图" />
+              <div class="land-pins" id="landPins">
+                <div class="land-pin is-left" style="left:25.5%;top:61%;--dx:-78px;--dy:-22px">
+                  <i class="land-pin-dot"></i>
+                  <span class="land-pin-lead"></span>
+                  <div class="land-pin-card"><span class="land-pin-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.2 11.4 12 4.8l7.8 6.6V19a1.2 1.2 0 0 1-1.2 1.2h-4.4v-5.6H9.8V20.2H5.4A1.2 1.2 0 0 1 4.2 19z"/></svg></span>1号楼</div>
+                </div>
+                <div class="land-pin is-left" style="left:34%;top:46%;--dx:-72px;--dy:-30px">
+                  <i class="land-pin-dot"></i>
+                  <span class="land-pin-lead"></span>
+                  <div class="land-pin-card"><span class="land-pin-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.2 11.4 12 4.8l7.8 6.6V19a1.2 1.2 0 0 1-1.2 1.2h-4.4v-5.6H9.8V20.2H5.4A1.2 1.2 0 0 1 4.2 19z"/></svg></span>3号楼</div>
+                </div>
+                <div class="land-pin is-right" style="left:45%;top:63%;--dx:18px;--dy:-40px">
+                  <i class="land-pin-dot"></i>
+                  <span class="land-pin-lead"></span>
+                  <div class="land-pin-card"><span class="land-pin-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.2 11.4 12 4.8l7.8 6.6V19a1.2 1.2 0 0 1-1.2 1.2h-4.4v-5.6H9.8V20.2H5.4A1.2 1.2 0 0 1 4.2 19z"/></svg></span>7号楼</div>
+                </div>
+                <div class="land-pin is-right" style="left:62%;top:47%;--dx:70px;--dy:8px">
+                  <i class="land-pin-dot"></i>
+                  <span class="land-pin-lead"></span>
+                  <div class="land-pin-card"><span class="land-pin-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.2 11.4 12 4.8l7.8 6.6V19a1.2 1.2 0 0 1-1.2 1.2h-4.4v-5.6H9.8V20.2H5.4A1.2 1.2 0 0 1 4.2 19z"/></svg></span>8号楼</div>
+                </div>
+                <div class="land-pin is-right" style="left:54%;top:26%;--dx:56px;--dy:-20px">
+                  <i class="land-pin-dot"></i>
+                  <span class="land-pin-lead"></span>
+                  <div class="land-pin-card"><span class="land-pin-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.2 11.4 12 4.8l7.8 6.6V19a1.2 1.2 0 0 1-1.2 1.2h-4.4v-5.6H9.8V20.2H5.4A1.2 1.2 0 0 1 4.2 19z"/></svg></span>10号楼</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="land-top">
+            <div class="land-brand">
+              <div class="land-project">XX项目智能建造管理平台</div>
+              <div class="home-progress">
+                <div class="home-progress-hd">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4.2l3 1.6"/></svg>
+                  项目总进度 <b>20%</b>
+                </div>
+                <span class="home-progress-bar"><i></i></span>
+              </div>
+            </div>
+            <div class="land-actions">
+              <button class="map-land-back" id="btnMapBack" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5 8 12l7 7"/></svg>
+                返回
+              </button>
+            </div>
+          </div>
+          <div class="land-side">
+            <button class="land-side-btn" id="btnLandPins" type="button" aria-label="隐藏楼栋">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.2 11.4 12 4.8l7.8 6.6V19a1.2 1.2 0 0 1-1.2 1.2h-4.4v-5.6H9.8V20.2H5.4A1.2 1.2 0 0 1 4.2 19z"/></svg>
+              <span>楼栋</span>
+            </button>
+            <button class="land-side-btn" id="btnLandKpi" type="button" aria-label="隐藏模块">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="7.2" height="6.4" rx="1.2"/><rect x="13.3" y="4.5" width="7.2" height="6.4" rx="1.2"/><rect x="3.5" y="13.1" width="7.2" height="6.4" rx="1.2"/><rect x="13.3" y="13.1" width="7.2" height="6.4" rx="1.2"/></svg>
+              <span>模块</span>
+            </button>
+          </div>
+          <div class="land-dock" id="landDock">
+            <div class="land-kpis">
+            <section class="land-kpi">
+              <h5>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3.5 19 6.2v5.4c0 4.4-3 7.4-7 8.9-4-1.5-7-4.5-7-8.9V6.2z"/><path d="M8.8 12.2 11 14.4l4.4-4.6"/></svg>
+                安全管理
+              </h5>
+              <div class="land-crew">
+                <div><b>3</b><span>管理人员</span></div>
+                <div><b>64</b><span>普通工人</span></div>
+                <div><b>2</b><span>安全员</span></div>
+                <div><b>12</b><span>特种作业</span></div>
+              </div>
+            </section>
+            <section class="land-kpi">
+              <h5>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6.2" y="3.8" width="11.6" height="16.4" rx="2"/><path d="M9 3.8h6v2.6H9z"/><path d="M8.7 12.4 10.8 14.5l4.6-4.8"/></svg>
+                质量管理
+              </h5>
+              <div class="land-eq">
+                <div class="land-eq-kpis">
+                  <div><b class="danger">4</b><span>质量隐患</span></div>
+                  <div><b class="ok">3</b><span>整改完成</span></div>
+                </div>
+                <div class="land-eq-stage">
+                  <div class="land-eq-card" id="landQaCard"></div>
+                </div>
+              </div>
+            </section>
+            <section class="land-kpi">
+              <h5>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M12 8v4.2l3 1.6"/></svg>
+                进度管理
+              </h5>
+              <div class="land-pg" id="landPg">
+                <div class="land-pg-list" id="landPgList"></div>
+                <div class="land-pg-dots" id="landPgDots"></div>
+              </div>
+            </section>
+            <section class="land-kpi">
+              <h5>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 20h15"/><path d="M7 20V7.5h3.2V20"/><path d="M8.6 7.5H20l-3.2 6.2"/><path d="M16.8 13.7V20"/><circle cx="16.8" cy="11.2" r="1.1"/></svg>
+                装备管控
+              </h5>
+              <div class="land-eq">
+                <div class="land-eq-kpis">
+                  <div><b>10</b><span>设备种类</span></div>
+                  <div><b>15</b><span>设备数量</span></div>
+                </div>
+                <div class="land-eq-stage">
+                  <div class="land-eq-card" id="landEqCard"></div>
+                </div>
+              </div>
+            </section>
+            </div>
+          </div>
+        </div>
+        <div class="cam-player" id="camPlayer" aria-hidden="true">
+          <div class="cam-player-bar">
+            <button class="cam-player-back" id="btnCamBack" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5 8 12l7 7"/></svg>
+              返回
+            </button>
+            <strong id="camPlayerName">视频监控</strong>
+            <span class="cam-live" id="camLive">直播中</span>
+          </div>
+          <div class="cam-player-stage" id="camPlayerStage">
+            <img id="camPlayerFrame" alt="" />
+            <span class="cam-time" id="camPlayerTime"></span>
+            <button class="cam-play" id="btnCamPlay" type="button" aria-label="播放"></button>
+          </div>
+          <div class="cam-player-switch">
+            <p>切换点位</p>
+            <div class="cam-player-chips" id="camPlayerChips"></div>
+          </div>
+        </div>
+        <div class="app home-mode" id="app">
+          <header class="status-bar">
+            <div class="status-left">
+              <span id="statusTime">09:41</span>
+              <span class="status-carrier">中国电信</span>
+            </div>
+            <div class="status-right">
+              <span class="status-net">4G</span>
+              <svg width="16" height="12" viewBox="0 0 16 12" aria-hidden="true">
+                <rect x="0" y="8" width="2.6" height="4" rx="0.4" fill="currentColor"/>
+                <rect x="4.4" y="5.5" width="2.6" height="6.5" rx="0.4" fill="currentColor"/>
+                <rect x="8.8" y="3" width="2.6" height="9" rx="0.4" fill="currentColor"/>
+                <rect x="13.2" y="0.5" width="2.6" height="11.5" rx="0.4" fill="currentColor"/>
+              </svg>
+              <svg width="15" height="12" viewBox="0 0 15 12" aria-hidden="true">
+                <path d="M1 8.4c3.4-4.2 9.6-4.2 13 0" stroke="currentColor" fill="none" stroke-width="1.4" stroke-linecap="round"/>
+                <path d="M3.8 9.6c2-2.3 5.4-2.3 7.4 0" stroke="currentColor" fill="none" stroke-width="1.4" stroke-linecap="round"/>
+                <circle cx="7.5" cy="11" r="1" fill="currentColor"/>
+              </svg>
+              <span class="status-battery">
+                <b>86%</b>
+                <svg width="24" height="12" viewBox="0 0 24 12" aria-hidden="true">
+                  <rect x="0.6" y="1.4" width="19.6" height="9.2" rx="2" stroke="currentColor" fill="none" stroke-width="1.2"/>
+                  <rect x="21.2" y="3.8" width="1.8" height="4.4" rx="0.5" fill="currentColor"/>
+                  <rect x="2.2" y="2.9" width="14.8" height="6.2" rx="1" fill="currentColor"/>
+                </svg>
+              </span>
+            </div>
+          </header>
+          <div class="stack">
+            <nav class="navbar">
+              <div class="nav-side" id="navLeft"></div>
+              <h1 class="nav-title" id="navTitle">首页</h1>
+              <div class="nav-side right" id="navRight"></div>
+            </nav>
+
+            <main class="pages">
+              <section class="page home-page active" id="page-home">
+                <div class="home-scene">
+                  <div class="home-map" role="img" aria-label="工地数字地图"></div>
+                  <div class="home-top">
+                    <div class="home-project-row">
+                      <div class="home-project">XX项目智能建造管理平台</div>
+                      <button class="home-switch" id="btnProjSwitch" type="button">切换</button>
+                      <button class="home-full" id="btnMapFull" type="button">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M8 5H5v3M16 5h3v3M8 19H5v-3M16 19h3v-3"/></svg>
+                        全屏
+                      </button>
+                    </div>
+                    <div class="home-progress">
+                      <div class="home-progress-hd">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4.2l3 1.6"/></svg>
+                        项目总进度 <b>20%</b>
+                      </div>
+                      <span class="home-progress-bar"><i></i></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="home-gutter-mask" aria-hidden="true"></div>
+                <div class="home-sheet">
+                  <div class="home-mods" id="homeMods">
+                    <button class="home-mod on" data-mod="safety" type="button">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3.5 19 6.2v5.4c0 4.4-3 7.4-7 8.9-4-1.5-7-4.5-7-8.9V6.2z"/><path d="M8.8 12.2 11 14.4l4.4-4.6"/></svg>
+                      <span>安全管理</span>
+                    </button>
+                    <button class="home-mod" data-mod="quality" type="button">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6.2" y="3.8" width="11.6" height="16.4" rx="2"/><path d="M9 3.8h6v2.6H9z"/><path d="M8.7 12.4 10.8 14.5l4.6-4.8"/></svg>
+                      <span>质量管理</span>
+                    </button>
+                    <button class="home-mod" data-mod="progress" type="button">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M12 8v4.2l3 1.6"/></svg>
+                      <span>进度管理</span>
+                    </button>
+                    <button class="home-mod" data-mod="equip" type="button">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 20h15"/><path d="M7 20V7.5h3.2V20"/><path d="M8.6 7.5H20l-3.2 6.2"/><path d="M16.8 13.7V20"/><circle cx="16.8" cy="11.2" r="1.1"/></svg>
+                      <span>装备管控</span>
+                    </button>
+                  </div>
+                  <div class="home-panels" id="homePanels"></div>
+                </div>
+              </section>
+
+              <section class="page work-page" id="page-work">
+                <div class="tool-list">
+                  <div class="tool-card">
+                    <div class="tool-ico blue">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="3.5" width="6.2" height="17" rx="1.2"/><rect x="13.3" y="3.5" width="6.2" height="17" rx="1.2"/><path d="M7.6 9.2v-2.4M7.6 9.2l-1.2-1.2M7.6 9.2l1.2-1.2M16.4 14.8v2.4M16.4 14.8l-1.2 1.2M16.4 14.8l1.2 1.2"/></svg>
+                    </div>
+                    <div class="tool-meta">
+                      <strong>垂直调度系统</strong>
+                      <p>施工电梯/塔机垂直运输调度</p>
+                    </div>
+                    <span class="tool-arrow">›</span>
+                  </div>
+                  <div class="tool-card">
+                    <div class="tool-ico green">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.5h2.2l1.6-4.2h8.2L18 14.5h2"/><path d="M5 14.5v3.2h14V14.5"/><circle cx="8" cy="18.2" r="1.4"/><circle cx="16" cy="18.2" r="1.4"/><path d="M7.8 10.3 9 7.8h6.2"/></svg>
+                    </div>
+                    <div class="tool-meta">
+                      <strong>水平调度系统</strong>
+                      <p>车辆出入场调度管理</p>
+                    </div>
+                    <span class="tool-arrow">›</span>
+                  </div>
+                  <div class="tool-card">
+                    <div class="tool-ico orange">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4 3.8 11.2l7.4 1.6L12.8 20z"/><path d="M11.2 12.8 21 4"/></svg>
+                    </div>
+                    <div class="tool-meta">
+                      <strong>工地地图导航</strong>
+                      <p>施工工地场内区域定位与导航</p>
+                    </div>
+                    <span class="tool-arrow">›</span>
+                  </div>
+                  <div class="tool-card">
+                    <div class="tool-ico purple">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 20V10.2L12 5.2l7.5 5V20"/><path d="M9.2 20v-6.2h5.6V20"/><path d="M8.2 12.2h2.2M13.6 12.2h2.2"/></svg>
+                    </div>
+                    <div class="tool-meta">
+                      <strong>工人住宿管理系统</strong>
+                      <p>酒店式公寓管理工人入住、退场</p>
+                    </div>
+                    <span class="tool-arrow">›</span>
+                  </div>
+                  <div class="tool-card">
+                    <div class="tool-ico teal">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 8.2h9.2v9.6H4.5z"/><path d="M13.7 11.2h5.8l1.5 3.2v3.4h-7.3"/><circle cx="8" cy="19.2" r="1.3"/><circle cx="16.8" cy="19.2" r="1.3"/><path d="M7 11.4h4.2"/></svg>
+                    </div>
+                    <div class="tool-meta">
+                      <strong>物资调度管理系统</strong>
+                      <p>轻量化物资调度订单进度追踪</p>
+                    </div>
+                    <span class="tool-arrow">›</span>
+                  </div>
+                </div>
+              </section>
+
+              <section class="page" id="page-msg">
+                <div class="card msg-list" id="msgList"></div>
+              </section>
+
+              <section class="page" id="page-mine">
+                <div class="profile-banner">
+                  <div class="avatar">张</div>
+                  <div>
+                    <h3>张工 <span class="role-tag">安全员</span></h3>
+                    <p>XX项目智能建造管理平台</p>
+                  </div>
+                </div>
+                <div class="card" id="mineMenu"></div>
+                <button class="logout-btn" id="btnLogout" type="button">退出登录</button>
+              </section>
+            </main>
+
+            <section class="subpage" id="subpage">
+              <nav class="navbar">
+                <div class="nav-side">
+                  <button class="nav-btn" id="btnBack">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.5 5.5 8 12l6.5 6.5"/></svg>
+                  </button>
+                </div>
+                <h1 class="nav-title" id="subTitle">详情</h1>
+                <div class="nav-side right"></div>
+              </nav>
+              <div class="subpage-body" id="subBody"></div>
+            </section>
+          </div>
+
+          <nav class="tabbar" id="tabbar">
+            <button class="tab active" data-tab="home">
+              <svg viewBox="0 0 24 24"><path d="M4 11.5 12 4l8 7.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1z"/></svg>
+              <span>首页</span>
+            </button>
+            <button class="tab" data-tab="work">
+              <svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.4"/><rect x="13" y="4" width="7" height="7" rx="1.4"/><rect x="4" y="13" width="7" height="7" rx="1.4"/><rect x="13" y="13" width="7" height="7" rx="1.4"/></svg>
+              <span>工作台</span>
+            </button>
+            <button class="tab" data-tab="msg">
+              <svg viewBox="0 0 24 24"><path d="M5 5.5h14v10.5H8.5L5 19.5V5.5z"/></svg>
+              <span>消息</span>
+              <b class="badge">5</b>
+            </button>
+            <button class="tab" data-tab="mine">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M5.5 19.5c1.2-3.2 3.6-4.7 6.5-4.7s5.3 1.5 6.5 4.7"/></svg>
+              <span>我的</span>
+            </button>
+          </nav>
+        </div>
+        <div class="toast" id="toast"></div>
+      </div>
+    </div>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>
