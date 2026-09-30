@@ -8,6 +8,24 @@
   <link rel="stylesheet" href="css/app.css" />
 </head>
 <body>
+  <div class="login-gate" id="loginGate">
+    <div class="login-card">
+      <div class="login-brand">向阳村项目智能建造管理平台</div>
+      <div class="login-sub">请输入访问密码后进入系统</div>
+      <form class="login-form" id="loginForm" autocomplete="off">
+        <input
+          type="password"
+          id="loginPwd"
+          placeholder="访问密码"
+          maxlength="32"
+          inputmode="numeric"
+          autocomplete="current-password"
+        />
+        <button type="submit">进入系统</button>
+      </form>
+      <div class="login-error" id="loginError">密码错误，请重试</div>
+    </div>
+  </div>
   <div class="stage">
     <div class="stage-title">工地数字地图 · 移动端标准版</div>
     <div class="phone">
