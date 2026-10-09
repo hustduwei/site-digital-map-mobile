@@ -537,7 +537,9 @@
             </div>`).join("")}</div>
         </div>
       </div>
-      <div class="pg-list">${buildings.map((b) => {
+      <div class="safe-block">
+        <h4>楼栋进度</h4>
+        <div class="pg-list">${buildings.map((b) => {
       const pct = Math.round((b.done / b.total) * 100);
       const late = b.plan === "滞后";
       return `
@@ -548,7 +550,8 @@
             <b>${b.done}/${b.total}F</b>
           </div>
         </div>`;
-    }).join("")}</div>`;
+    }).join("")}</div>
+      </div>`;
   }
 
   const siteEquip = [
