@@ -23,6 +23,25 @@
   -ms-overflow-style: none;
 }
 
+.map-land:not(.open),
+.cam-player:not(.open),
+.air-player:not(.open),
+.hazard-page:not(.open),
+.cam-shot-pop:not(.open) {
+  display: none !important;
+}
+
+.cam-player.open,
+.air-player.open,
+.hazard-page.open,
+.cam-shot-pop.open {
+  display: flex !important;
+}
+
+.map-land.open {
+  display: block !important;
+}
+
 *::-webkit-scrollbar {
   display: none;
   width: 0;

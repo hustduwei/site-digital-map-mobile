@@ -1226,6 +1226,7 @@
     closeAir();
     closeHazard();
     setCamLand(false);
+    camPlayer.hidden = false;
     camPlayer.classList.add("open");
     camPlayer.setAttribute("aria-hidden", "false");
     applyCam(id, false);
@@ -1236,7 +1237,9 @@
     setCamLand(false);
     camPlayer.classList.remove("open", "live");
     camPlayer.setAttribute("aria-hidden", "true");
+    camPlayer.hidden = true;
     camShotPop.classList.remove("open");
+    camShotPop.hidden = true;
     hideCamCal();
     showCamMode("live");
   }
@@ -1326,11 +1329,13 @@
     camShotImg.src = shot.img;
     camShotImg.className = shot.pos;
     camShotMeta.textContent = camName.textContent + "  " + formatCamDate(camShotDate) + "  " + shot.time;
+    camShotPop.hidden = false;
     camShotPop.classList.add("open");
   });
 
   document.getElementById("btnShotClose").addEventListener("click", () => {
     camShotPop.classList.remove("open");
+    camShotPop.hidden = true;
   });
 
   const airPlayer = document.getElementById("airPlayer");
@@ -1395,6 +1400,7 @@
     hideAirCal();
     airPop.classList.remove("open");
     renderAir();
+    airPlayer.hidden = false;
     airPlayer.classList.add("open");
     airPlayer.setAttribute("aria-hidden", "false");
   }
@@ -1404,7 +1410,9 @@
     hideAirCal();
     airPlayer.classList.remove("open");
     airPlayer.setAttribute("aria-hidden", "true");
+    airPlayer.hidden = true;
     airPop.classList.remove("open");
+    airPop.hidden = true;
   }
 
   const hazardPage = document.getElementById("hazardPage");
@@ -1450,6 +1458,7 @@
     closeCam();
     closeAir();
     resetHazard();
+    hazardPage.hidden = false;
     hazardPage.classList.add("open");
     hazardPage.setAttribute("aria-hidden", "false");
   }
@@ -1458,6 +1467,7 @@
     if (!hazardPage) return;
     hazardPage.classList.remove("open");
     hazardPage.setAttribute("aria-hidden", "true");
+    hazardPage.hidden = true;
     resetHazard();
   }
 
@@ -1507,6 +1517,7 @@
   document.getElementById("btnAirBack").addEventListener("click", () => {
     if (airPop.classList.contains("open")) {
       airPop.classList.remove("open");
+      airPop.hidden = true;
       return;
     }
     if (!airCal.classList.contains("hide")) {
@@ -1561,6 +1572,7 @@
     airPopImg.src = shot.img;
     airPopImg.className = shot.pos;
     airPopMeta.textContent = "定点航拍  " + formatCamDate(airDate) + "  " + shot.time;
+    airPop.hidden = false;
     airPop.classList.add("open");
   });
 
@@ -1710,6 +1722,7 @@
 
   function openMapLand() {
     phone.classList.add("is-landscape");
+    mapLand.hidden = false;
     mapLand.classList.add("open");
     mapLand.setAttribute("aria-hidden", "false");
   }
@@ -1718,6 +1731,7 @@
     phone.classList.remove("is-landscape");
     mapLand.classList.remove("open");
     mapLand.setAttribute("aria-hidden", "true");
+    mapLand.hidden = true;
   }
 
   document.getElementById("btnMapFull").addEventListener("click", openMapLand);
