@@ -54,45 +54,50 @@
     `<svg viewBox="0 0 24 24"><path d="${d}"/></svg>`;
 
   const msgIco = {
-    build: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.4 20h5.2"/><path d="M8.2 20 12 4.6 15.8 20"/><path d="M8.6 12.4h6.8"/><path d="M9.4 16.4h5.2"/></svg>`,
-    guard: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6 19 6.4v5.2c0 4.2-2.9 7.1-7 8.6-4.1-1.5-7-4.4-7-8.6V6.4z"/></svg>`,
-    people: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 8.2c.4-2 1.8-3.2 3.8-3.2s3.4 1.2 3.8 3.2"/><circle cx="12" cy="9.4" r="2.6"/><path d="M5.6 19.4c1.1-3 3.3-4.5 6.4-4.5s5.3 1.5 6.4 4.5"/></svg>`,
-    env: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.2 14.6c6.4-.4 10.2-6.2 11.6-9.8-1.2 8.4-5.4 13.8-11.2 13.8-2.2 0-3.8-1.2-3.8-3 0-1.4 1.2-1.6 3.4-1z"/><path d="M8.4 16.2c1.8-2 4.6-5.4 7.4-8"/></svg>`,
-    inspect: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15.8 7.2c0-1.8-1.8-3-3.8-3s-3.8 1.2-3.8 3c0 3.4 7.6 2.6 7.6 6.6 0 2-1.8 3.2-3.8 3.2s-3.8-1.2-3.8-3"/></svg>`,
-    truck: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.6 14.6V8.2h10.2v6.4"/><path d="M13.8 10.4h3.8L20.4 14.6v0"/><path d="M3.6 14.6h16.8"/><circle cx="7.2" cy="16.4" r="1.5"/><circle cx="16.6" cy="16.4" r="1.5"/></svg>`
+    people: `<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.2" r="2.8"/><path d="M5.8 19.2c.8-3.2 3.1-4.8 6.2-4.8s5.4 1.6 6.2 4.8"/></svg>`,
+    inspect: `<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.2" cy="6.2" r="2"/><circle cx="17.8" cy="6.2" r="2"/><circle cx="6.2" cy="17.8" r="2"/><circle cx="17.8" cy="17.8" r="2"/><path d="M8.2 6.2h7.6M8.2 17.8h7.6M6.2 8.2v7.6M17.8 8.2v7.6"/><rect x="10" y="10" width="4" height="4" rx="0.8"/></svg>`
   };
 
   const messages = [
-    { kind: "build", title: "施工预警", desc: "这是一条施工预警消息", time: "14:36:26", unread: 1 },
-    { kind: "guard", title: "安防预警", desc: "这是一条安防预警消息", time: "22:12:11", unread: 1 },
     { kind: "people", title: "人员预警", desc: "这是一条人员预警消息", time: "15:51:45", unread: 1 },
-    { kind: "env", title: "环境预警", desc: "这是一条环境预警消息", time: "13:18:28", unread: 1 },
-    { kind: "inspect", title: "巡检预警", desc: "无人机巡检识别到3处现场风险", time: "10:36:26", unread: 1 },
-    { kind: "truck", title: "车辆预警", desc: "这是一条车辆预警消息", time: "昨天", unread: 0 }
+    { kind: "inspect", title: "巡检预警", desc: "无人机巡检识别到道路垃圾、电缆拖地等现场风险", time: "1分钟前", unread: 1 }
   ];
 
   const menuSvg = {
     sites: "M5 20V7.5L12 4l7 3.5V20 M9.5 20v-5h5v5",
-    attend: "M12 8v4.5l3 1.5 M12 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16z",
-    fav: "M12 4.5 14.2 9l5 .7-3.6 3.5.9 5L12 16l-4.5 2.2.9-5L4.8 9.7 9.8 9z",
     setting: "M12 15.2a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4z M4.5 12h2 M17.5 12h2 M6.2 6.2l1.5 1.5 M16.3 16.3l1.5 1.5 M6.2 17.8l1.5-1.5 M16.3 7.7l1.5-1.5",
     about: "M12 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16z M12 11v5 M12 8v.5"
   };
 
   const mineMenus = [
     { id: "sites", name: "我的工地" },
-    { id: "attend", name: "考勤记录" },
-    { id: "fav", name: "我的收藏" },
     { id: "setting", name: "设置" },
     { id: "about", name: "关于" }
   ];
 
+  const camPosCycle = ["pos-left", "pos-right", "pos-bottom", ""];
   const cameras = [
-    { id: "gate", name: "向阳村项目大门入口", img: "img/site-map.jpg", pos: "pos-left", listed: true },
-    { id: "rebar", name: "钢筋加工区", img: "img/site-map.jpg", pos: "pos-right" },
-    { id: "pier", name: "3#墩作业面", img: "img/site-map.jpg", pos: "pos-bottom" },
-    { id: "yard", name: "场区全景", img: "img/site-map.jpg", pos: "" }
-  ];
+    { id: "g1", name: "1#门监控", group: "出入口" },
+    { id: "g1a", name: "1#门安全通道门禁监控", group: "出入口" },
+    { id: "g2a", name: "2#门监控1", group: "出入口" },
+    { id: "g2b", name: "2#门监控2", group: "出入口" },
+    { id: "g3out", name: "3#门外监控", group: "出入口" },
+    { id: "g4", name: "4#门监控", group: "出入口" },
+    { id: "g4a", name: "4#门安全通道门禁监控", group: "出入口" },
+    { id: "g5", name: "5#门监控", group: "出入口" },
+    { id: "g5out", name: "5#门外监控", group: "出入口" },
+    { id: "cama", name: "监控A", group: "场内" },
+    { id: "camb", name: "监控B", group: "场内" },
+    { id: "weigh", name: "地磅全景", group: "场内" },
+    { id: "rebar", name: "钢筋加工棚", group: "场内" },
+    { id: "yard1", name: "场内1", group: "场内" },
+    { id: "yard2", name: "场内2", group: "场内" },
+    { id: "talk", name: "安全讲台", group: "场内" },
+    { id: "crane2", name: "2#塔吊", group: "塔吊" },
+    { id: "crane4", name: "4#塔吊", group: "塔吊" }
+  ].map((c) => Object.assign(c, { img: "img/cam-crane2.jpg", pos: "" }));
+  const camShotPool = ["img/cam-crane2.jpg", "img/cam-crane2.jpg", "img/cam-crane2.jpg"];
+  const camShotTimes = ["08:12", "12:36", "16:50"];
 
 
   const navTitle = document.getElementById("navTitle");
@@ -108,8 +113,11 @@
     document.querySelectorAll(".tab").forEach((b) => b.classList.toggle("active", b.dataset.tab === tab));
     navTitle.textContent = titles[tab];
     appEl.classList.toggle("home-mode", tab === "home");
-    closeSub();
+    closeSub(true);
     closeCam();
+    closeAir();
+    if (tab === "home" && homeMod === "safety") requestAnimationFrame(startAlarmFeed);
+    else stopAlarmFeed();
   }
 
   function camStamp() {
@@ -151,46 +159,301 @@
       </div>`;
   }
 
-  function renderSafety() {
+  function lineThrough(pts, tension) {
+    if (!pts.length) return "";
+    const t = tension == null ? 0.7 : tension;
+    let d = `M${pts[0][0].toFixed(1)},${pts[0][1].toFixed(1)}`;
+    if (pts.length === 1) return d;
+    for (let i = 0; i < pts.length - 1; i++) {
+      const p0 = pts[i - 1] || pts[i];
+      const p1 = pts[i];
+      const p2 = pts[i + 1];
+      const p3 = pts[i + 2] || p2;
+      const c1x = p1[0] + (p2[0] - p0[0]) / 6 * t;
+      const c1y = p1[1] + (p2[1] - p0[1]) / 6 * t;
+      const c2x = p2[0] - (p3[0] - p1[0]) / 6 * t;
+      const c2y = p2[1] - (p3[1] - p1[1]) / 6 * t;
+      d += ` C${c1x.toFixed(1)},${c1y.toFixed(1)} ${c2x.toFixed(1)},${c2y.toFixed(1)} ${p2[0].toFixed(1)},${p2[1].toFixed(1)}`;
+    }
+    return d;
+  }
+
+  function alarmTrendSvg(fillId) {
+    const days = ["10/2", "10/3", "10/4", "10/5", "10/6", "10/7", "10/8"];
+    const vals = [2, 3, 6, 16, 13, 8, 4];
+    const w = 220;
+    const h = 78;
+    const pl = 20;
+    const pr = 8;
+    const pt = 10;
+    const pb = 16;
+    const maxY = 20;
+    const n = days.length;
+    const xAt = (i) => pl + (i / (n - 1)) * (w - pl - pr);
+    const yAt = (v) => pt + (1 - v / maxY) * (h - pt - pb);
+    const pts = vals.map((v, i) => [xAt(i), yAt(v)]);
+    const line = lineThrough(pts, 0.7);
+    const base = yAt(0).toFixed(1);
+    const area = `${line} L${xAt(n - 1).toFixed(1)},${base} L${xAt(0).toFixed(1)},${base} Z`;
+    const grids = [0, 10, 20].map((t) => {
+      const y = yAt(t).toFixed(1);
+      return `<line x1="${pl}" x2="${w - pr}" y1="${y}" y2="${y}"/><text x="${pl - 4}" y="${(+y + 3).toFixed(1)}" text-anchor="end">${t}</text>`;
+    }).join("");
+    const labels = days.map((d, i) => `<text x="${xAt(i).toFixed(1)}" y="${h - 2}" text-anchor="middle">${d}</text>`).join("");
+    const dots = pts.map(([x, y]) =>
+      `<circle class="alarm-dot" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.3"/>`
+    ).join("");
+    const gid = fillId || "alarmFill";
+    return `<svg class="alarm-svg" viewBox="0 0 ${w} ${h}">
+      <defs>
+        <linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#4C9FFF" stop-opacity="0.32"/>
+          <stop offset="100%" stop-color="#4C9FFF" stop-opacity="0.03"/>
+        </linearGradient>
+      </defs>
+      <g class="alarm-grid">${grids}</g>
+      <path d="${area}" fill="url(#${gid})"/>
+      <path d="${line}" fill="none" stroke="#4C9FFF" stroke-width="1.6" stroke-linejoin="round"/>
+      ${dots}
+      <g class="alarm-x">${labels}</g>
+    </svg>`;
+  }
+
+  function smoothPath(pts) {
+    let d = `M${pts[0][0].toFixed(1)},${pts[0][1].toFixed(1)}`;
+    for (let i = 0; i < pts.length - 1; i++) {
+      const cpx = ((pts[i][0] + pts[i + 1][0]) / 2).toFixed(1);
+      d += ` C${cpx},${pts[i][1].toFixed(1)} ${cpx},${pts[i + 1][1].toFixed(1)} ${pts[i + 1][0].toFixed(1)},${pts[i + 1][1].toFixed(1)}`;
+    }
+    return d;
+  }
+
+  function peopleHourSvg() {
+    const hours = ["1:00", "3:00", "5:00", "7:00", "9:00", "11:00", "13:00", "15:00", "17:00", "19:00", "21:00", "23:00"];
+    const workers = [2, 2, 2, 8, 36, 33, 18, 24, 27];
+    const managers = [2, 2, 2, 2, 7, 19, 3, 5, 10];
+    const w = 320;
+    const h = 148;
+    const pl = 28;
+    const pr = 8;
+    const pt = 10;
+    const pb = 22;
+    const maxY = 40;
+    const ticksN = hours.length;
+    const xAt = (i) => pl + (i / (ticksN - 1)) * (w - pl - pr);
+    const yAt = (v) => pt + (1 - v / maxY) * (h - pt - pb);
+    const wPts = workers.map((v, i) => [xAt(i), yAt(v)]);
+    const mPts = managers.map((v, i) => [xAt(i), yAt(v)]);
+    const wLine = smoothPath(wPts);
+    const mLine = smoothPath(mPts);
+    const last = workers.length - 1;
+    const base = yAt(0).toFixed(1);
+    const area = `${wLine} L${xAt(last).toFixed(1)},${base} L${xAt(0).toFixed(1)},${base} Z`;
+    const grids = [0, 10, 20, 30, 40].map((t) => {
+      const y = yAt(t).toFixed(1);
+      return `<line x1="${pl}" x2="${w - pr}" y1="${y}" y2="${y}"/><text x="${pl - 4}" y="${(+y + 3).toFixed(1)}" text-anchor="end">${t}</text>`;
+    }).join("");
+    const labels = hours.map((d, i) => `<text x="${xAt(i).toFixed(1)}" y="${h - 4}" text-anchor="middle">${d}</text>`).join("");
+    return `<svg class="people-hour-svg" viewBox="0 0 ${w} ${h}">
+      <defs>
+        <linearGradient id="peopleFill" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#3DDC97" stop-opacity="0.45"/>
+          <stop offset="100%" stop-color="#3DDC97" stop-opacity="0.04"/>
+        </linearGradient>
+      </defs>
+      <g class="alarm-grid">${grids}</g>
+      <path d="${area}" fill="url(#peopleFill)"/>
+      <path d="${wLine}" fill="none" stroke="#3DDC97" stroke-width="2"/>
+      <path d="${mLine}" fill="none" stroke="#4C9FFF" stroke-width="2"/>
+      <g class="alarm-x">${labels}</g>
+    </svg>`;
+  }
+
+  const inspectAlarms = [
+    { id: "trash", day: "today", type: "道路垃圾", title: "环境报警", desc: "场区道路发现垃圾堆放未清理！", img: "img/alarm-trash.jpg", rel: "1分钟前", at: "2026-10-08 15:21:00", geo: "114.24751233100210,30.53310211883421" },
+    { id: "cable", day: "today", type: "电缆拖地", title: "用电报警", desc: "作业面电缆拖地未架空，存在触电隐患！", img: "img/alarm-cable.jpg", rel: "3分钟前", at: "2026-10-08 15:19:00", geo: "114.24738810244102,30.53290155210933" },
+    { id: "net", day: "today", type: "安全网缺失", title: "防护报警", desc: "楼层临边安全网缺失，请立即整改！", img: "img/alarm-net.jpg", rel: "12分钟前", at: "2026-10-08 15:10:00", geo: "114.24742027911455,30.53296304904549" },
+    { id: "soil", day: "today", type: "裸土未覆盖", title: "扬尘报警", desc: "场区裸土未覆盖，扬尘风险较高！", img: "img/alarm-soil.jpg", rel: "1小时前", at: "2026-10-08 14:22:00", geo: "114.24760188412003,30.53322190771208" },
+    { id: "h-net", day: "hist", type: "安全网缺失", title: "防护报警", desc: "3#楼作业面临边安全网破损缺失。", img: "img/alarm-net.jpg", rel: "昨天 09:30", at: "2026-09-30 09:30:00", geo: "114.24742027911455,30.53296304904549" },
+    { id: "h-trash", day: "hist", type: "道路垃圾", title: "环境报警", desc: "场区北侧道路垃圾堆放未及时清运。", img: "img/alarm-trash.jpg", rel: "10/7 16:20", at: "2026-10-07 16:20:00", geo: "114.24749822001145,30.53308044122890" },
+    { id: "h-cable", day: "hist", type: "电缆拖地", title: "用电报警", desc: "钢筋加工区电缆拖地，存在漏电风险。", img: "img/alarm-cable.jpg", rel: "10/6 11:08", at: "2026-10-06 11:08:00", geo: "114.24735501988210,30.53284411902341" },
+    { id: "h-soil", day: "hist", type: "裸土未覆盖", title: "扬尘报警", desc: "基坑周边裸土未覆盖，扬尘超标。", img: "img/alarm-soil.jpg", rel: "10/5 08:46", at: "2026-10-05 08:46:00", geo: "114.24757700124480,30.53319822009112" }
+  ];
+
+  const latestAlarms = inspectAlarms.filter((a) => a.day === "today");
+
+  const ALARM_FEED_SHOW = 3;
+  let alarmFeedTimer = 0;
+  let alarmFeedIdx = 0;
+
+  function alarmFeedItem(a) {
     return `
-      <div class="safe-block">
-        <h4>告警预警</h4>
-        <div class="home-stats three">
-          <div class="home-stat alert"><b>6</b><span>今日告警</span></div>
-          <div class="home-stat fix"><b>3</b><span>待整改</span></div>
-          <div class="home-stat done"><b>3</b><span>已整改</span></div>
+      <div class="alarm-feed-item" data-alarm="${a.id}" role="button">
+        <img class="alarm-feed-pic" src="${a.img}" alt="${a.type}" />
+        <div class="alarm-feed-meta">
+          <strong>${a.title}</strong>
+          <p>${a.desc}</p>
         </div>
-      </div>
-      <div class="safe-block">
-        <h4>作业人数</h4>
-        <div class="crew-grid">${[
-          [3, "管理人员"],
-          [64, "普通工人"],
-          [2, "安全管理人员"],
-          [12, "特种作业工人"]
-        ].map(([n, name]) => `
-          <div class="crew-item"><b>${n}<em>人</em></b><span>${name}</span></div>
-        `).join("")}</div>
-      </div>
-      <div class="safe-block">
-        <div class="safe-hd">
-          <h4>视频监控</h4>
-          <button class="cam-cfg" type="button" aria-label="配置">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.61-.22l-2.39.96c-.5-.39-1.04-.7-1.63-.94l-.36-2.54A.5.5 0 0 0 13.89 2h-3.78a.5.5 0 0 0-.49.42l-.36 2.54c-.59.24-1.13.55-1.63.94l-2.39-.96a.5.5 0 0 0-.61.22L2.71 8.48a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94L2.83 15.16a.5.5 0 0 0-.12.64l1.92 3.32c.14.24.43.34.69.22l2.39-.96c.5.39 1.04.7 1.63.94l.36 2.54c.05.24.25.42.49.42h3.78c.24 0 .44-.18.49-.42l.36-2.54c.59-.24 1.13-.55 1.63-.94l2.39.96c.26.12.55.02.69-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z"/>
-            </svg>
-          </button>
-        </div>
-        <div class="cam-grid">${cameras.slice(0, 4).map((c) => renderCamCard(c)).join("")}</div>
+        <span class="alarm-feed-time">${a.rel}</span>
       </div>`;
   }
 
-  const landQaItems = [
-    { name: "1号楼", rate: 96 },
-    { name: "3号楼", rate: 92 },
-    { name: "7号楼", rate: 88 },
-    { name: "8号楼", rate: 71 },
-    { name: "10号楼", rate: 90 }
+  function renderAlarmFeed() {
+    const list = latestAlarms.slice();
+    const extra = list.length > ALARM_FEED_SHOW ? list.slice(0, ALARM_FEED_SHOW) : [];
+    return `
+      <div class="home-chart-card alarm-feed">
+        <div class="alarm-feed-win">
+          <div class="alarm-feed-track" id="alarmFeedTrack">
+            ${list.concat(extra).map(alarmFeedItem).join("")}
+          </div>
+        </div>
+      </div>`;
+  }
+
+  function stopAlarmFeed() {
+    clearInterval(alarmFeedTimer);
+    alarmFeedTimer = 0;
+    alarmFeedIdx = 0;
+  }
+
+  function startAlarmFeed() {
+    stopAlarmFeed();
+    const track = document.getElementById("alarmFeedTrack");
+    const win = track && track.parentElement;
+    if (!track || !win || latestAlarms.length <= ALARM_FEED_SHOW) return;
+    const item = track.querySelector(".alarm-feed-item");
+    if (!item) return;
+    const h = item.offsetHeight;
+    win.style.height = h * ALARM_FEED_SHOW + "px";
+    track.style.transform = "translateY(0)";
+    alarmFeedTimer = setInterval(() => {
+      alarmFeedIdx += 1;
+      track.style.transition = "transform 0.45s ease";
+      track.style.transform = `translateY(${-alarmFeedIdx * h}px)`;
+      if (alarmFeedIdx >= latestAlarms.length) {
+        setTimeout(() => {
+          track.style.transition = "none";
+          track.style.transform = "translateY(0)";
+          alarmFeedIdx = 0;
+        }, 460);
+      }
+    }, 4000);
+  }
+
+  const b2Occupied = { 1: 5, 4: 1 };
+  const b2FloorCount = 5;
+  const peopleTree = [
+    { id: "yard", name: "场布", count: 38 },
+    {
+      id: "b2",
+      name: "2#楼",
+      count: 6,
+      children: Array.from({ length: b2FloorCount }, (_, i) => {
+        const n = i + 1;
+        return { id: "b2-" + n, name: n + "F", count: b2Occupied[n] || 0 };
+      })
+    },
+    { id: "base", name: "地下室", count: 2 }
+  ];
+
+  let peopleNode = null;
+
+  function peopleChildren() {
+    return peopleNode && peopleNode.children ? peopleNode.children : peopleTree;
+  }
+
+  function renderPeopleDist() {
+    const box = document.getElementById("peopleDist");
+    if (!box) return;
+    if (peopleNode && peopleNode.children) {
+      const floors = peopleNode.children;
+      const live = floors.filter((n) => n.count).length;
+      box.innerHTML = `
+        <button class="people-back" type="button" data-people="back">
+          <em>‹</em>
+          <strong>${peopleNode.name}</strong>
+          <b>${peopleNode.count}<i>人</i></b>
+        </button>
+        <div class="people-sub">有人 ${live}层 · 共${floors.length}层</div>
+        <div class="people-floor-grid">${floors.map((n) => `
+          <div class="people-floor${n.count ? "" : " empty"}">
+            <span>${n.name}</span>
+            <b>${n.count}</b>
+          </div>`).join("")}</div>`;
+      return;
+    }
+    box.innerHTML = `<div class="people-zones">${peopleTree.map((n) => `
+      <button class="people-zone${n.children ? " drill" : ""}" type="button" data-people="${n.id}">
+        <span>${n.name}</span>
+        <b>${n.count}<em>人</em></b>
+        ${n.children ? "<i>›</i>" : ""}
+      </button>`).join("")}</div>`;
+  }
+
+  function renderSafety() {
+    return `
+      <div class="safe-block">
+        <h4>今日预警</h4>
+        <div class="home-stats alarm-row">
+          <div class="home-stat alert"><b>${latestAlarms.length}</b><span>今日预警数</span></div>
+          <div class="home-chart-card alarm-mini">
+            <span class="alarm-mini-lab">近7日预警趋势</span>
+            ${alarmTrendSvg()}
+          </div>
+        </div>
+        ${renderAlarmFeed()}
+      </div>
+      <div class="safe-block">
+        <h4>作业人数</h4>
+        <div class="home-chart-card crew-overview">${[
+          ["160", "人", "项目人数"],
+          ["40", "人", "正在上班"],
+          ["76", "人", "今日出勤"],
+          ["47.5", "%", "出勤率"]
+        ].map(([n, unit, name]) => `
+          <div class="crew-kpi"><b>${n}<em>${unit}</em></b><span>${name}</span></div>
+        `).join("")}</div>
+      </div>
+      <div class="safe-block">
+        <h4>区域分布</h4>
+        <div class="home-chart-card people-dist" id="peopleDist"></div>
+      </div>
+      <div class="safe-block">
+        <h4>今日时段趋势</h4>
+        <div class="home-chart-card people-hour">
+          <div class="people-hour-hd">
+            <div class="people-hour-leg">
+              <span><i class="g"></i>工人</span>
+              <span><i class="b"></i>管理人员</span>
+            </div>
+          </div>
+          <div class="people-hour-y">人数</div>
+          ${peopleHourSvg()}
+        </div>
+      </div>`;
+  }
+
+  const siteBuildings = [
+    { name: "酒店", done: 16, total: 16, plan: "正常", rate: 96 },
+    { name: "1#楼", done: 1, total: 8, plan: "正常", rate: 92 },
+    { name: "2#楼", done: 1, total: 33, plan: "正常", rate: 88 },
+    { name: "3#楼", done: 1, total: 33, plan: "正常", rate: 71 },
+    { name: "4#楼", done: 1, total: 8, plan: "正常", rate: 90 },
+    { name: "幼儿园", done: 3, total: 3, plan: "正常", rate: 94 }
+  ];
+  const qaCats = [
+    { name: "土建主体", last: 93, now: 93 },
+    { name: "二次结构", last: 89, now: 89 },
+    { name: "门窗栏杆", last: 91, now: 91 },
+    { name: "机电", last: 89, now: 89 },
+    { name: "外立面", last: 89, now: 89 }
+  ];
+  const qaSteps = [
+    { name: "验收工序1", n: 1, color: "#4C9FFF" },
+    { name: "验收工序2", n: 1, color: "#22C55E" },
+    { name: "验收工序3", n: 3, color: "#F5C14A" },
+    { name: "验收工序4", n: 1, color: "#FF6B6B" }
   ];
 
   function landQaState(rate) {
@@ -200,63 +463,81 @@
   }
 
   function renderQuality() {
-    const slices = [
-      ["#3DB8E8", "工艺观感", "25.6%"],
-      ["#22C55E", "成品保护", "25.6%"],
-      ["#7C5CFC", "防渗漏", "12.7%"],
-      ["#E8C547", "工序倒置", "12.7%"],
-      ["#F77234", "空鼓开裂", "8.6%"],
-      ["#F53F3F", "结构安全", "8.6%"]
-    ];
+    const stepTotal = qaSteps.reduce((s, d) => s + d.n, 0);
     let acc = 0;
-    const pie = "conic-gradient(" + slices.map((s) => {
-      const n = parseFloat(s[2]);
+    const pie = "conic-gradient(" + qaSteps.map((d) => {
       const a = acc;
-      acc += n;
-      return `${s[0]} ${a}% ${acc}%`;
-    }).join(", ") + `, #EEF0F3 ${acc}% 100%)`;
+      acc += (d.n / stepTotal) * 100;
+      return `${d.color} ${a}% ${acc}%`;
+    }).join(", ") + ")";
     return `
-      <div class="qa-kpis">
-        <div class="qa-kpi"><span>质量隐患</span><b class="danger">4</b></div>
-        <div class="qa-kpi"><span>整改完成</span><b class="ok">3</b></div>
-        <div class="qa-kpi"><span>整改完成率</span><b class="warn">75%</b></div>
-      </div>
-      <div class="home-chart-card">
-        <div class="home-chart-row qa-chart">
-          <div class="donut" style="background:${pie}">
-            <div class="donut-label"><b>23%</b><span>工艺观感</span></div>
+      <div class="safe-block">
+        <h4>合格率</h4>
+        <div class="home-chart-card qa-pass">
+          <div class="qa-pass-hd">
+            <span>合格率%</span>
+            <div class="qa-pass-leg">
+              <span><i class="last"></i>上月合格率</span>
+              <span><i class="now"></i>本月合格率</span>
+            </div>
           </div>
-          <div class="qa-legend">${slices.map((x) => `
-            <div class="qa-legend-item"><i style="background:${x[0]}"></i><span>${x[1]}</span><em>${x[2]}</em></div>
-          `).join("")}</div>
+          <div class="qa-pass-plot">
+            <div class="qa-pass-y"><em>100</em><em>80</em><em>60</em><em>40</em><em>20</em><em>0</em></div>
+            <div class="qa-pass-cols">${qaCats.map((d) => `
+              <div class="qa-pass-col">
+                <div class="qa-pass-pair">
+                  <b class="last" style="height:${d.last}%"><em>${d.last}</em></b>
+                  <b class="now" style="height:${d.now}%"><em>${d.now}</em></b>
+                </div>
+                <span>${d.name}</span>
+              </div>`).join("")}</div>
+          </div>
         </div>
       </div>
       <div class="safe-block">
-        <h4>实测实量合格率</h4>
-        <div class="qa-rate-list">${landQaItems.map((d) => {
-          const st = landQaState(d.rate);
-          return `
-            <div class="qa-rate-card">
-              <div class="qa-rate-hd">
-                <strong>${d.name}</strong>
-                <span class="qa-rate-bar"><i class="${st}" style="width:${d.rate}%"></i></span>
-                <b class="${st}">${d.rate}%</b>
-              </div>
-            </div>`;
-        }).join("")}</div>
+        <h4>验收工序</h4>
+        <div class="home-chart-card">
+          <div class="home-chart-row qa-chart">
+            <div class="donut qa-step-donut" style="background:${pie}">
+              <div class="donut-label"><b>100</b><span>验收工序</span></div>
+            </div>
+            <div class="qa-legend">${qaSteps.map((d) => `
+              <div class="qa-legend-item"><i style="background:${d.color}"></i><span>${d.name}</span><em>${d.n}</em></div>
+            `).join("")}</div>
+          </div>
+        </div>
       </div>`;
   }
 
+  const msFlag = `<svg viewBox="0 0 24 24"><path d="M7 21V4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8 4.4h10.2l-2.6 3.6 2.6 3.6H8z" fill="currentColor"/></svg>`;
+
   function renderProgress() {
-    const buildings = [
-      { name: "1号楼", done: 24, total: 30, plan: "正常", crew: 18 },
-      { name: "3号楼", done: 16, total: 30, plan: "正常", crew: 12 },
-      { name: "5号楼", done: 14, total: 30, plan: "正常", crew: 10 },
-      { name: "7号楼", done: 11, total: 30, plan: "正常", crew: 15 },
-      { name: "8号楼", done: 7, total: 30, plan: "滞后", crew: 6 },
-      { name: "10号楼", done: 19, total: 30, plan: "正常", crew: 20 }
+    const milestones = [
+      { name: "项目开始", plan: "2025-08-15", actual: "2026-07-15", delta: -31, state: "done" },
+      { name: "施工图审查完成", plan: "2025-10-15", actual: "2025-09-30", delta: -15, state: "done" },
+      { name: "新建地下室出正负零", plan: "2026-11-01", actual: "--", state: "now" },
+      { name: "既有结构加固改造完成", plan: "2026-12-30", actual: "--", state: "todo" },
+      { name: "主体结构封顶", plan: "2027-03-16", actual: "--", state: "todo" },
+      { name: "外立面、机电安装完成", plan: "2027-09-30", actual: "--", state: "todo" },
+      { name: "项目竣工", plan: "2027-10-23", actual: "--", state: "todo" }
     ];
-    return `<div class="pg-list">${buildings.map((b) => {
+    const buildings = siteBuildings;
+    return `
+      <div class="safe-block">
+        <h4>项目总里程碑</h4>
+        <div class="home-chart-card ms-card">
+          <div class="ms-list">${milestones.map((m) => `
+            <div class="ms-item ${m.state}">
+              <i class="ms-ico">${msFlag}</i>
+              <div class="ms-body">
+                <strong>${m.name}</strong>
+                <p>计划完成 <b>${m.plan}</b></p>
+                <p>实际完成 <b>${m.actual}</b>${m.delta != null ? `<em class="ok">(${m.delta})</em>` : ""}</p>
+              </div>
+            </div>`).join("")}</div>
+        </div>
+      </div>
+      <div class="pg-list">${buildings.map((b) => {
       const pct = Math.round((b.done / b.total) * 100);
       const late = b.plan === "滞后";
       return `
@@ -264,60 +545,117 @@
           <div class="pg-hd">
             <strong>${b.name}</strong>
             <span class="pg-bar"><i style="width:${pct}%"></i></span>
-          </div>
-          <div class="pg-metrics">
-            <div><b>${b.done}/${b.total}层</b><span>施工进度</span></div>
-            <div><b class="${late ? "late" : "ok"}">${b.plan}</b><span>计划进度</span></div>
-            <div><b>${b.crew}</b><span>工作面人数</span></div>
+            <b>${b.done}/${b.total}F</b>
           </div>
         </div>`;
     }).join("")}</div>`;
   }
 
+  const siteEquip = [
+    { id: "crane", name: "5G塔机", value: "15.69t", metric: "今日吊重", ico: "crane",
+      units: [{ name: "5G塔机", on: true, rows: [["今日吊重", "15.69t"]] }] },
+    { id: "lift", name: "智能电梯", value: "122次", metric: "今日升降次数", ico: "lift",
+      units: [
+        { name: "智能电梯1-1", on: true, rows: [["今日循环次数", "122次"], ["今日运行时长", "10.2h"]] },
+        { name: "智能电梯1-2", on: false, rows: [["今日循环次数", "0次"], ["今日运行时长", "0.0h"]] },
+        { name: "智能电梯2-1", on: false, rows: [["今日循环次数", "0次"], ["今日运行时长", "0.0h"]] },
+        { name: "智能电梯2-2", on: true, rows: [["今日循环次数", "0次"], ["今日运行时长", "0.0h"]] }
+      ] },
+    { id: "drone", name: "无人机", value: "12次", metric: "今日作业次数", ico: "drone",
+      units: [{ name: "无人机", on: true, rows: [["今日作业次数", "12次"]] }] },
+    { id: "climb", name: "智能爬架", value: "21m", metric: "爬升高度", ico: "climb",
+      units: [{ name: "智能爬架", on: true, rows: [["爬升高度", "21m"]] }] },
+    { id: "grind", name: "地砖研磨机器人", value: "5次", metric: "今日作业次数", ico: "robot",
+      units: [{ name: "地砖研磨机器人", on: true, rows: [["今日作业次数", "5次"]] }] },
+    { id: "plaster", name: "抹灰机器人", value: "4次", metric: "今日作业次数", ico: "robot",
+      units: [{ name: "抹灰机器人", on: true, rows: [["今日作业次数", "4次"]] }] },
+    { id: "measure", name: "测量机器人", value: "7次", metric: "今日作业次数", ico: "robot",
+      units: [{ name: "测量机器人", on: true, rows: [["今日作业次数", "7次"]] }] },
+    { id: "spray", name: "喷涂机器人", value: "9次", metric: "今日作业次数", ico: "robot",
+      units: [{ name: "喷涂机器人", on: true, rows: [["今日作业次数", "9次"]] }] },
+    { id: "level", name: "混凝土整平机器人", value: "3次", metric: "今日作业次数", ico: "robot",
+      units: [{ name: "混凝土整平机器人", on: true, rows: [["今日作业次数", "3次"]] }] }
+  ];
+
+  let eqNode = null;
+
+  function equipCount(d) {
+    const on = d.units.filter((u) => u.on).length;
+    const total = d.units.length;
+    return { on, total, st: on <= 0 ? "off" : on < total ? "warn" : "on" };
+  }
+
   function renderEquip() {
-    const devices = [
-      { name: "智能塔机", on: 2, total: 2, value: "86.6t", metric: "今日吊重", ok: true },
-      { name: "智能电梯", on: 2, total: 2, value: "152次", metric: "今日升降次数", ok: true },
-      { name: "智能地磅", on: 1, total: 1, value: "200.6m³", metric: "今日完成方量", ok: true },
-      { name: "无人机", on: 1, total: 1, value: "24.0t", metric: "今日吊重", ok: true }
-    ];
+    if (eqNode) {
+      return `
+        <button class="eq-back" type="button" data-eq="back">
+          <em>‹</em>
+          <strong>${eqNode.name}</strong>
+          <b>${equipCount(eqNode).on}/${eqNode.units.length}</b>
+        </button>
+        <div class="eq-units">${eqNode.units.map((u) => `
+          <div class="eq-unit">
+            <div class="eq-hd">
+              <strong>${u.name}</strong>
+              <i class="eq-dot ${u.on ? "on" : "off"}"></i>
+            </div>
+            ${u.rows.map((r) => `<div class="eq-kv"><span>${r[0]}</span><b>${r[1]}</b></div>`).join("")}
+          </div>`).join("")}</div>`;
+    }
+    const kinds = siteEquip.length;
+    const qty = siteEquip.reduce((s, d) => s + d.units.length, 0);
+    const on = siteEquip.reduce((s, d) => s + d.units.filter((u) => u.on).length, 0);
+    const off = qty - on;
+    const onPct = qty ? (on / qty) * 100 : 0;
+    const pie = `conic-gradient(#2EE6A6 0% ${onPct}%, #3A4E66 ${onPct}% 100%)`;
     return `
-      <div class="home-stats">
-        <div class="home-stat eq-stat">
-          <div class="eq-stat-txt">
-            <b>10</b><span>设备种类</span>
-          </div>
-          <i class="eq-kpi-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.2" y="4.2" width="6.4" height="6.4" rx="1.2"/><rect x="13.4" y="4.2" width="6.4" height="6.4" rx="1.2"/><rect x="4.2" y="13.4" width="6.4" height="6.4" rx="1.2"/><rect x="13.4" y="13.4" width="6.4" height="6.4" rx="1.2"/></svg>
-          </i>
+      <div class="home-stats alarm-row">
+        <div class="home-chart-card eq-count">
+          <div class="eq-count-item"><b>${kinds}<em>种</em></b><span>设备种类</span></div>
+          <div class="eq-count-item"><b>${qty}<em>台</em></b><span>设备数量</span></div>
         </div>
-        <div class="home-stat eq-stat">
-          <div class="eq-stat-txt">
-            <b>15</b><span>设备数量</span>
+        <div class="home-chart-card eq-status">
+          <span class="alarm-mini-lab">设备状态</span>
+          <div class="eq-status-body">
+            <i class="donut eq-status-donut" style="background:${pie}"></i>
+            <div class="eq-status-leg">
+              <div><i class="on"></i><span>在线</span><b>${on}</b></div>
+              <div><i class="off"></i><span>离线</span><b>${off}</b></div>
+            </div>
           </div>
-          <i class="eq-kpi-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16.6 12 20l7-3.4V8.2L12 4.8 5 8.2z"/><path d="M12 20v-7.4"/><path d="M5 8.2 12 12.6 19 8.2"/></svg>
-          </i>
         </div>
       </div>
-      <div class="eq-grid">${devices.map((d) => `
-        <div class="eq-card">
+      <div class="eq-grid">${siteEquip.map((d) => {
+        const c = equipCount(d);
+        const drill = c.total > 1;
+        return `
+        <button class="eq-card${drill ? " drill" : ""}" type="button"${drill ? ` data-eq="${d.id}" aria-label="${d.name}，点击展开明细"` : ""}>
           <div class="eq-hd">
             <strong>${d.name}</strong>
-            <i class="eq-dot ${d.ok ? "on" : "off"}"></i>
-            <em>${d.on}/${d.total}</em>
+            <i class="eq-dot ${c.st}"></i>
+            ${drill ? `<em>${c.on}/${c.total}</em>` : ""}
           </div>
-          <b>${d.value}</b>
-          <span>${d.metric}</span>
-        </div>`).join("")}</div>`;
+          <div class="eq-val">
+            <b>${d.value}</b>
+            <span>${d.metric}</span>
+          </div>
+          ${drill ? `<span class="eq-more" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6l6 6-6 6"/></svg></span>` : ""}
+        </button>`;
+      }).join("")}</div>`;
   }
 
   function renderHomePanel(mod) {
+    stopAlarmFeed();
+    if (mod !== "equip") eqNode = null;
     const box = document.getElementById("homePanels");
     if (mod === "safety") box.innerHTML = renderSafety();
     else if (mod === "quality") box.innerHTML = renderQuality();
     else if (mod === "progress") box.innerHTML = renderProgress();
     else if (mod === "equip") box.innerHTML = renderEquip();
+    if (mod === "safety") {
+      renderPeopleDist();
+      requestAnimationFrame(startAlarmFeed);
+    }
   }
 
   function renderMsgs() {
@@ -344,51 +682,185 @@
       </button>`).join("");
   }
 
-  function renderInspectDetail() {
-    const boxes = [
-      { cls: "high", left: "6%", top: "18%", w: "34%", h: "42%", lab: "临边防护缺失 96%" },
-      { cls: "mid", left: "44%", top: "40%", w: "22%", h: "20%", lab: "未戴安全帽 91%" },
-      { cls: "warn", left: "68%", top: "58%", w: "26%", h: "24%", lab: "堆料占道 87%" }
-    ];
-    const risks = [
-      { lv: "高", cls: "high", title: "临边防护缺失", desc: "8号楼东侧作业面临边未设置防护栏，存在坠落风险。", conf: "96%", pos: "8号楼东侧" },
-      { lv: "中", cls: "mid", title: "未佩戴安全帽", desc: "基坑作业面识别到2名作业人员未按规定佩戴安全帽。", conf: "91%", pos: "基坑作业面" },
-      { lv: "低", cls: "warn", title: "材料堆放占道", desc: "场区通道被钢筋堆料侵占，影响通行及应急疏散。", conf: "87%", pos: "场区南侧通道" }
-    ];
+  function inspectListItem(a) {
     return `
-      <div class="ai-summary">
-        <div><b class="danger">3</b><span>识别风险</span></div>
-        <div><b>无人机-01</b><span>巡检设备</span></div>
-        <div><b>10:36</b><span>拍摄时间</span></div>
-      </div>
-      <div class="ai-frame">
-        <img src="img/site-map.jpg" alt="无人机巡检画面" />
-        ${boxes.map((b) => `<span class="ai-box ${b.cls}" style="left:${b.left};top:${b.top};width:${b.w};height:${b.h}"><i>${b.lab}</i></span>`).join("")}
-        <div class="ai-frame-bar">
-          <em>AI识别</em>
-          <span>无人机航拍画面 · 2026-09-30 10:36:26</span>
+      <div class="insp-item" data-alarm="${a.id}" role="button">
+        <img class="insp-pic" src="${a.img}" alt="${a.type}" />
+        <div class="insp-meta">
+          <strong>${a.type}</strong>
+          <p>${a.desc}</p>
         </div>
-      </div>
-      <h4 class="ai-sec">风险明细</h4>
-      <div class="ai-risks">${risks.map((r) => `
-        <div class="ai-risk">
-          <div class="ai-risk-hd">
-            <strong>${r.title}</strong>
-            <b class="${r.cls}">${r.lv}</b>
-          </div>
-          <p>${r.desc}</p>
-          <div class="ai-risk-meta"><span>${r.pos}</span><span>置信度 ${r.conf}</span></div>
-        </div>`).join("")}</div>`;
+        <span class="insp-time">${a.rel}</span>
+      </div>`;
   }
 
-  function openSub(title, html) {
+  let inspTab = "today";
+  function protoToday() {
+    return startOfDay(new Date(2026, 9, 8));
+  }
+  let inspHistDate = addDays(protoToday(), -1);
+  let inspCalMonth = startOfDay(new Date(inspHistDate.getFullYear(), inspHistDate.getMonth(), 1));
+
+  function dateKey(d) {
+    const x = startOfDay(d);
+    return x.getFullYear() + "-" + String(x.getMonth() + 1).padStart(2, "0") + "-" + String(x.getDate()).padStart(2, "0");
+  }
+
+  function alarmsOnDate(d) {
+    const key = dateKey(d);
+    return inspectAlarms.filter((a) => a.day === "hist" && a.at.slice(0, 10) === key);
+  }
+
+  function inspCalMaxDay() {
+    return addDays(protoToday(), -1);
+  }
+
+  function inspCalEls() {
+    return {
+      cal: document.getElementById("inspCal"),
+      title: document.getElementById("inspCalTitle"),
+      grid: document.getElementById("inspCalGrid"),
+      prev: document.getElementById("inspCalPrev"),
+      next: document.getElementById("inspCalNext")
+    };
+  }
+
+  function paintInspCal() {
+    const els = inspCalEls();
+    if (!els.cal) return;
+    fillMonthCal(inspCalMonth, inspHistDate, els.title, els.grid, els.prev, els.next, {
+      maxDay: inspCalMaxDay()
+    });
+  }
+
+  function hideInspCal() {
+    const cal = document.getElementById("inspCal");
+    if (cal) cal.classList.add("hide");
+  }
+
+  function showInspCal() {
+    inspCalMonth = startOfDay(new Date(inspHistDate.getFullYear(), inspHistDate.getMonth(), 1));
+    paintInspCal();
+    const cal = document.getElementById("inspCal");
+    if (cal) cal.classList.remove("hide");
+    const hist = subBody.querySelector(".insp-hist");
+    if (hist) hist.scrollIntoView({ block: "start" });
+  }
+
+  function renderInspectList() {
+    const today = inspectAlarms.filter((a) => a.day === "today");
+    const hist = alarmsOnDate(inspHistDate);
+    const histLab = formatCamDate(inspHistDate);
+    const onHist = inspTab === "hist";
+    return `
+      <div class="insp-page">
+        <div class="insp-tabs">
+          <button class="insp-tab${onHist ? "" : " on"}" type="button" data-insp-tab="today">今日预警</button>
+          <button class="insp-tab${onHist ? " on" : ""}" type="button" data-insp-tab="hist">历史预警</button>
+        </div>
+        <div class="insp-pane${onHist ? " hide" : ""}">
+          <div class="home-stats alarm-row">
+            <div class="home-stat alert"><b>${today.length}</b><span>今日预警数</span></div>
+            <div class="home-chart-card alarm-mini">
+              <span class="alarm-mini-lab">近7日预警趋势</span>
+              ${alarmTrendSvg("inspAlarmFill")}
+            </div>
+          </div>
+          <div class="insp-list">${today.map(inspectListItem).join("")}</div>
+        </div>
+        <div class="insp-pane insp-hist${onHist ? "" : " hide"}">
+          <div class="insp-hist-hd">
+            <div>
+              <strong>${sameDay(inspHistDate, inspCalMaxDay()) ? "昨天" : histLab}</strong>
+              <span>${hist.length}条</span>
+            </div>
+            <button class="cam-day cam-day-pick on" type="button" data-insp-cal-open="1">
+              ${sameDay(inspHistDate, inspCalMaxDay()) ? "昨天" : formatMD(inspHistDate)}
+              ${calIco}
+            </button>
+          </div>
+          <div class="cam-cal hide" id="inspCal">
+            <div class="cam-cal-hd">
+              <button class="cam-cal-nav" id="inspCalPrev" type="button" aria-label="上一月">‹</button>
+              <strong id="inspCalTitle">2026年10月</strong>
+              <button class="cam-cal-nav" id="inspCalNext" type="button" aria-label="下一月">›</button>
+            </div>
+            <div class="cam-cal-week">
+              <span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span>
+            </div>
+            <div class="cam-cal-grid" id="inspCalGrid"></div>
+          </div>
+          ${hist.length
+            ? `<div class="insp-list">${hist.map(inspectListItem).join("")}</div>`
+            : `<div class="insp-empty">该日暂无巡检预警</div>`}
+        </div>
+      </div>`;
+  }
+
+  function renderAlarmDetail(a) {
+    return `
+      <div class="alarm-hero">
+        <img src="${a.img}" alt="${a.type}" />
+        <div class="alarm-hero-tag">
+          <strong>自动巡航无人机</strong>
+          <span>UAV-25638583</span>
+        </div>
+      </div>
+      <div class="alarm-info">
+        <h4>基础信息</h4>
+        <div class="alarm-kv"><span>项目名称</span><em>中建三局-向阳村项目</em></div>
+        <div class="alarm-kv"><span>任务名称</span><em>向阳村-三维(加密)</em></div>
+        <div class="alarm-kv"><span>检测时间</span><em>${a.at}</em></div>
+        <h4>识别结果</h4>
+        <div class="alarm-kv"><span>识别类型</span><em>${a.type}</em><b>自动</b><i>0级</i></div>
+        <div class="alarm-kv"><span>地址</span><em>湖北省武汉市汉阳区江堤街道江永堤路铉龙城</em></div>
+        <div class="alarm-kv"><span>经纬度</span><em class="alarm-geo">${a.geo}</em></div>
+      </div>`;
+  }
+
+  let subBack = null;
+
+  function paintSub(title, html) {
     subTitle.textContent = title;
     subBody.innerHTML = html;
     subpage.classList.add("open");
   }
 
-  function closeSub() {
-    subpage.classList.remove("open");
+  function openInspectList(tab) {
+    if (tab === "today" || tab === "hist") inspTab = tab;
+    subBack = null;
+    subpage.classList.remove("is-alarm");
+    paintSub("巡检预警", renderInspectList());
+  }
+
+  function openAlarmDetail(id, fromList) {
+    const a = inspectAlarms.find((x) => x.id === id);
+    if (!a) return;
+    subBack = fromList ? openInspectList : null;
+    subpage.classList.add("is-alarm");
+    paintSub("预警详情", renderAlarmDetail(a));
+  }
+
+  function openSub(title, html) {
+    subBack = null;
+    subpage.classList.remove("is-alarm");
+    paintSub(title, html);
+  }
+
+  function closeSub(force) {
+    const inspCal = document.getElementById("inspCal");
+    if (force !== true && inspCal && !inspCal.classList.contains("hide")) {
+      hideInspCal();
+      return;
+    }
+    if (force !== true && subBack) {
+      const fn = subBack;
+      subBack = null;
+      fn();
+      return;
+    }
+    subBack = null;
+    subpage.classList.remove("open", "is-alarm");
   }
 
   function pageHtml(name) {
@@ -425,8 +897,66 @@
   document.getElementById("msgList").addEventListener("click", (e) => {
     const item = e.target.closest(".msg-item");
     if (!item || item.dataset.kind !== "inspect") return;
-    openSub("巡检预警", renderInspectDetail());
+    openInspectList("today");
   });
+
+  subBody.addEventListener("click", (e) => {
+    const prev = e.target.closest("#inspCalPrev");
+    if (prev) {
+      if (prev.disabled) return;
+      inspCalMonth.setMonth(inspCalMonth.getMonth() - 1);
+      paintInspCal();
+      return;
+    }
+    const next = e.target.closest("#inspCalNext");
+    if (next) {
+      if (next.disabled) return;
+      inspCalMonth.setMonth(inspCalMonth.getMonth() + 1);
+      paintInspCal();
+      return;
+    }
+    const calDay = e.target.closest("#inspCalGrid [data-cal]");
+    if (calDay) {
+      if (calDay.disabled) return;
+      const [y, m, d] = calDay.dataset.cal.split("-").map(Number);
+      inspHistDate = startOfDay(new Date(y, m - 1, d));
+      openInspectList("hist");
+      return;
+    }
+    const tab = e.target.closest("[data-insp-tab]");
+    if (tab) {
+      hideInspCal();
+      openInspectList(tab.dataset.inspTab);
+      return;
+    }
+    const pick = e.target.closest("[data-insp-cal-open]");
+    if (pick) {
+      const cal = document.getElementById("inspCal");
+      if (!cal) return;
+      if (cal.classList.contains("hide")) showInspCal();
+      else hideInspCal();
+      return;
+    }
+    const item = e.target.closest("[data-alarm]");
+    if (item) openAlarmDetail(item.dataset.alarm, true);
+  });
+
+  const pageHome = document.getElementById("page-home");
+  let sheetUp = false;
+
+  function setSheetUp(up) {
+    sheetUp = !!up;
+    if (sheetUp) {
+      const pageRect = pageHome.getBoundingClientRect();
+      const prog = pageHome.querySelector(".home-progress");
+      const progRect = prog.getBoundingClientRect();
+      const top = Math.round(progRect.bottom - pageRect.top + 12);
+      pageHome.style.setProperty("--sheet-up-top", top + "px");
+      pageHome.classList.add("is-sheet-up");
+    } else {
+      pageHome.classList.remove("is-sheet-up");
+    }
+  }
 
   document.getElementById("homeMods").addEventListener("click", (e) => {
     const btn = e.target.closest(".home-mod");
@@ -436,7 +966,37 @@
     renderHomePanel(homeMod);
   });
 
+  document.getElementById("btnSheetToggle").addEventListener("click", () => setSheetUp(!sheetUp));
+  window.addEventListener("resize", () => { if (sheetUp) setSheetUp(true); });
+
   document.getElementById("homePanels").addEventListener("click", (e) => {
+    const eqBtn = e.target.closest("[data-eq]");
+    if (eqBtn) {
+      if (eqBtn.dataset.eq === "back") eqNode = null;
+      else eqNode = siteEquip.find((d) => d.id === eqBtn.dataset.eq) || null;
+      document.getElementById("homePanels").innerHTML = renderEquip();
+      return;
+    }
+    const peopleBtn = e.target.closest("[data-people]");
+    if (peopleBtn) {
+      const id = peopleBtn.dataset.people;
+      if (id === "back") {
+        peopleNode = null;
+        renderPeopleDist();
+        return;
+      }
+      const node = peopleChildren().find((n) => n.id === id);
+      if (node && node.children) {
+        peopleNode = node;
+        renderPeopleDist();
+      }
+      return;
+    }
+    const alarm = e.target.closest("[data-alarm]");
+    if (alarm) {
+      openInspectList("today");
+      return;
+    }
     const cfg = e.target.closest(".cam-cfg");
     if (cfg) {
       e.stopPropagation();
@@ -453,14 +1013,190 @@
     if (card) openCam(card.dataset.cam);
   });
 
+  document.getElementById("workShorts").addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-work]");
+    if (!btn) return;
+    const kind = btn.dataset.work;
+    if (kind === "cam") openCam(cameras[0].id);
+    else if (kind === "photo") openAir();
+    else if (kind === "hazard") openHazard();
+    else showToast("功能待定");
+  });
+
   const phone = document.querySelector(".phone");
   const mapLand = document.getElementById("mapLand");
   const camPlayer = document.getElementById("camPlayer");
+  const camLiveView = document.getElementById("camLiveView");
+  const camShotsView = document.getElementById("camShotsView");
+  const camChips = document.getElementById("camPlayerChips");
   const camFrame = document.getElementById("camPlayerFrame");
   const camName = document.getElementById("camPlayerName");
   const camTime = document.getElementById("camPlayerTime");
-  const camChips = document.getElementById("camPlayerChips");
+  const camShotDays = document.getElementById("camShotDays");
+  const camShotGrid = document.getElementById("camShotGrid");
+  const camShotPop = document.getElementById("camShotPop");
+  const camShotImg = document.getElementById("camShotImg");
+  const camShotMeta = document.getElementById("camShotMeta");
+  const camCal = document.getElementById("camCal");
+  const camCalTitle = document.getElementById("camCalTitle");
+  const camCalGrid = document.getElementById("camCalGrid");
+  const camCalPrev = document.getElementById("camCalPrev");
+  const camCalNext = document.getElementById("camCalNext");
   let camId = cameras[0].id;
+  let camMode = "live";
+  let camShotDate = startOfDay(new Date());
+  let camCalMonth = startOfDay(new Date());
+  let camShots = [];
+
+  function startOfDay(d) {
+    const x = new Date(d);
+    x.setHours(0, 0, 0, 0);
+    return x;
+  }
+
+  function sameDay(a, b) {
+    return startOfDay(a).getTime() === startOfDay(b).getTime();
+  }
+
+  function addDays(d, n) {
+    const x = startOfDay(d);
+    x.setDate(x.getDate() + n);
+    return x;
+  }
+
+  function dayOffsetOf(d) {
+    return Math.round((startOfDay(new Date()) - startOfDay(d)) / 86400000);
+  }
+
+  function formatMD(d) {
+    const x = startOfDay(d);
+    return String(x.getMonth() + 1).padStart(2, "0") + "/" + String(x.getDate()).padStart(2, "0");
+  }
+
+  function camDayLabel(offset) {
+    return formatCamDate(addDays(new Date(), -offset));
+  }
+
+  function formatCamDate(d) {
+    const off = dayOffsetOf(d);
+    if (off === 0) return "今天";
+    if (off === 1) return "昨天";
+    return formatMD(d);
+  }
+
+  function shotsFor(id, day) {
+    const i = cameras.findIndex((c) => c.id === id);
+    return camShotTimes.map((t, n) => ({
+      time: t,
+      img: camShotPool[(i + Math.abs(day) + n) % camShotPool.length],
+      pos: ["pos-left", "pos-right", "pos-bottom"][n]
+    }));
+  }
+
+  const calIco = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg>`;
+
+  function calMinMonth() {
+    const d = startOfDay(new Date());
+    d.setMonth(d.getMonth() - 11);
+    d.setDate(1);
+    return d;
+  }
+
+  function calMaxMonth() {
+    const d = startOfDay(new Date());
+    d.setDate(1);
+    return d;
+  }
+
+  function dayPickChips(selected, openAttr) {
+    const today = startOfDay(new Date());
+    const yest = addDays(today, -1);
+    const picked = dayOffsetOf(selected) > 1;
+    return `
+      <button class="cam-day${sameDay(selected, today) ? " on" : ""}" type="button" data-day="0">今天</button>
+      <button class="cam-day${sameDay(selected, yest) ? " on" : ""}" type="button" data-day="1">昨天</button>
+      <button class="cam-day cam-day-pick${picked ? " on" : ""}" type="button" ${openAttr}>
+        ${picked ? formatMD(selected) : "选日期"}
+        ${calIco}
+      </button>`;
+  }
+
+  function fillMonthCal(month, selected, titleEl, gridEl, prevBtn, nextBtn, opts) {
+    const y = month.getFullYear();
+    const m = month.getMonth();
+    const maxDay = startOfDay((opts && opts.maxDay) || new Date());
+    const maxMonth = startOfDay(new Date(maxDay.getFullYear(), maxDay.getMonth(), 1));
+    titleEl.textContent = y + "年" + (m + 1) + "月";
+    prevBtn.disabled = month <= calMinMonth();
+    nextBtn.disabled = month >= maxMonth;
+    const firstDow = new Date(y, m, 1).getDay();
+    const daysInMonth = new Date(y, m + 1, 0).getDate();
+    const today = startOfDay(new Date());
+    const cells = [];
+    for (let i = 0; i < firstDow; i++) cells.push('<span class="cam-cal-day off"></span>');
+    for (let d = 1; d <= daysInMonth; d++) {
+      const date = new Date(y, m, d);
+      const blocked = startOfDay(date) > maxDay;
+      const on = sameDay(date, selected);
+      const isToday = sameDay(date, today);
+      cells.push(
+        `<button class="cam-cal-day${on ? " on" : ""}${isToday ? " today" : ""}" type="button" data-cal="${y}-${m + 1}-${d}" ${blocked ? "disabled" : ""}>${d}</button>`
+      );
+    }
+    gridEl.innerHTML = cells.join("");
+  }
+
+  function hideCamCal() {
+    camCal.classList.add("hide");
+  }
+
+  function renderCamCal() {
+    fillMonthCal(camCalMonth, camShotDate, camCalTitle, camCalGrid, camCalPrev, camCalNext);
+  }
+
+  function showCamCal() {
+    camCalMonth = startOfDay(new Date(camShotDate.getFullYear(), camShotDate.getMonth(), 1));
+    renderCamCal();
+    camCal.classList.remove("hide");
+  }
+
+  function showCamMode(mode) {
+    camMode = mode;
+    camLiveView.classList.toggle("hide", mode !== "live");
+    camShotsView.classList.toggle("hide", mode !== "shots");
+  }
+
+  function renderCamChips() {
+    const groups = [];
+    cameras.forEach((c) => {
+      let g = groups.find((x) => x.name === c.group);
+      if (!g) {
+        g = { name: c.group, items: [] };
+        groups.push(g);
+      }
+      g.items.push(c);
+    });
+    camChips.innerHTML = groups.map((g) => `
+      <div class="cam-chip-group">
+        <h5>${g.name}<em>${g.items.length}</em></h5>
+        <div class="cam-chip-grid">
+          ${g.items.map((c) =>
+            `<button class="cam-chip${c.id === camId ? " on" : ""}" type="button" data-cam="${c.id}">${c.name}</button>`
+          ).join("")}
+        </div>
+      </div>`).join("");
+  }
+
+  function renderCamShots() {
+    camShotDays.innerHTML = dayPickChips(camShotDate, 'data-cal-open="1"');
+    camShots = shotsFor(camId, dayOffsetOf(camShotDate));
+    const label = formatCamDate(camShotDate);
+    camShotGrid.innerHTML = camShots.map((s, i) => `
+      <button class="cam-shot" type="button" data-shot="${i}">
+        <img class="${s.pos}" src="${s.img}" alt="${s.time} 抓拍" />
+        <span>${label} ${s.time}</span>
+      </button>`).join("");
+  }
 
   function applyCam(id, keepLive) {
     const cam = cameras.find((c) => c.id === id) || cameras[0];
@@ -469,21 +1205,37 @@
     camFrame.className = cam.pos;
     camName.textContent = cam.name;
     camTime.textContent = camStamp();
-    camChips.querySelectorAll(".cam-chip").forEach((b) => b.classList.toggle("on", b.dataset.cam === cam.id));
+    camShotDate = startOfDay(new Date());
+    hideCamCal();
+    renderCamChips();
+    renderCamShots();
     if (!keepLive) camPlayer.classList.remove("live");
   }
 
+  function setCamLand(on) {
+    phone.classList.toggle("is-landscape", on);
+    camPlayer.classList.toggle("is-land", on);
+    const txt = document.getElementById("camLandText");
+    if (txt) txt.textContent = on ? "退出全屏" : "全屏";
+  }
+
   function openCam(id) {
-    camChips.innerHTML = cameras.map((c) => `<button class="cam-chip" type="button" data-cam="${c.id}">${c.name}</button>`).join("");
-    applyCam(id, false);
-    camPlayer.classList.remove("single");
+    closeAir();
+    closeHazard();
+    setCamLand(false);
     camPlayer.classList.add("open");
     camPlayer.setAttribute("aria-hidden", "false");
+    applyCam(id, false);
+    showCamMode("live");
   }
 
   function closeCam() {
+    setCamLand(false);
     camPlayer.classList.remove("open", "live");
     camPlayer.setAttribute("aria-hidden", "true");
+    camShotPop.classList.remove("open");
+    hideCamCal();
+    showCamMode("live");
   }
 
   document.getElementById("btnCamPlay").addEventListener("click", () => {
@@ -491,33 +1243,345 @@
     camTime.textContent = camStamp();
   });
 
-  document.getElementById("btnCamBack").addEventListener("click", closeCam);
+  document.getElementById("btnCamBack").addEventListener("click", () => {
+    if (camShotPop.classList.contains("open")) {
+      camShotPop.classList.remove("open");
+      return;
+    }
+    if (!camCal.classList.contains("hide")) {
+      hideCamCal();
+      return;
+    }
+    if (camMode === "shots") {
+      hideCamCal();
+      showCamMode("live");
+      return;
+    }
+    if (camPlayer.classList.contains("is-land")) {
+      setCamLand(false);
+      return;
+    }
+    closeCam();
+  });
+
+  document.getElementById("btnCamShots").addEventListener("click", () => {
+    camShotDate = startOfDay(new Date());
+    hideCamCal();
+    renderCamShots();
+    showCamMode("shots");
+  });
+
+  document.getElementById("btnCamLand").addEventListener("click", () => {
+    setCamLand(!camPlayer.classList.contains("is-land"));
+  });
 
   camChips.addEventListener("click", (e) => {
-    const chip = e.target.closest(".cam-chip");
+    const chip = e.target.closest("[data-cam]");
     if (chip) applyCam(chip.dataset.cam, camPlayer.classList.contains("live"));
   });
 
-  const landBuildings = [
-    { name: "1号楼", pct: 80, late: false },
-    { name: "3号楼", pct: 53, late: false },
-    { name: "5号楼", pct: 47, late: false },
-    { name: "7号楼", pct: 37, late: false },
-    { name: "8号楼", pct: 23, late: true },
-    { name: "10号楼", pct: 63, late: false }
-  ];
+  camShotDays.addEventListener("click", (e) => {
+    const pick = e.target.closest("[data-cal-open]");
+    if (pick) {
+      if (camCal.classList.contains("hide")) showCamCal();
+      else hideCamCal();
+      return;
+    }
+    const btn = e.target.closest("[data-day]");
+    if (!btn) return;
+    hideCamCal();
+    camShotDate = addDays(new Date(), -Number(btn.dataset.day));
+    renderCamShots();
+  });
+
+  camCalPrev.addEventListener("click", () => {
+    if (camCalPrev.disabled) return;
+    camCalMonth.setMonth(camCalMonth.getMonth() - 1);
+    renderCamCal();
+  });
+
+  camCalNext.addEventListener("click", () => {
+    if (camCalNext.disabled) return;
+    camCalMonth.setMonth(camCalMonth.getMonth() + 1);
+    renderCamCal();
+  });
+
+  camCalGrid.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-cal]");
+    if (!btn || btn.disabled) return;
+    const [y, m, d] = btn.dataset.cal.split("-").map(Number);
+    camShotDate = startOfDay(new Date(y, m - 1, d));
+    hideCamCal();
+    renderCamShots();
+  });
+
+  camShotGrid.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-shot]");
+    if (!btn) return;
+    const shot = camShots[Number(btn.dataset.shot)];
+    if (!shot) return;
+    camShotImg.src = shot.img;
+    camShotImg.className = shot.pos;
+    camShotMeta.textContent = camName.textContent + "  " + formatCamDate(camShotDate) + "  " + shot.time;
+    camShotPop.classList.add("open");
+  });
+
+  document.getElementById("btnShotClose").addEventListener("click", () => {
+    camShotPop.classList.remove("open");
+  });
+
+  const airPlayer = document.getElementById("airPlayer");
+  const airDays = document.getElementById("airDays");
+  const airHint = document.getElementById("airHint");
+  const airGrid = document.getElementById("airGrid");
+  const airPop = document.getElementById("airPop");
+  const airPopImg = document.getElementById("airPopImg");
+  const airPopMeta = document.getElementById("airPopMeta");
+  const airCal = document.getElementById("airCal");
+  const airCalTitle = document.getElementById("airCalTitle");
+  const airCalGrid = document.getElementById("airCalGrid");
+  const airCalPrev = document.getElementById("airCalPrev");
+  const airCalNext = document.getElementById("airCalNext");
+  const airImgs = ["img/aerial-a.jpg", "img/aerial-b.jpg"];
+  const airTimes = ["07:22", "08:15", "09:08", "10:32", "11:46", "13:18", "14:55", "16:12", "17:38", "18:21"];
+  const airPos = ["pos-tl", "pos-tr", "pos-c", "pos-bl", "pos-br", "pos-l", "pos-r", "pos-t", "pos-b", "pos-c"];
+  let airDate = startOfDay(new Date());
+  let airCalMonth = startOfDay(new Date());
+  let airList = [];
+
+  function airShots(day) {
+    const n = 8 + (Math.abs(day) % 3);
+    return airTimes.slice(0, n).map((t, i) => ({
+      time: t,
+      img: airImgs[(i + Math.abs(day)) % airImgs.length],
+      pos: airPos[i % airPos.length]
+    }));
+  }
+
+  function hideAirCal() {
+    airCal.classList.add("hide");
+  }
+
+  function renderAirCal() {
+    fillMonthCal(airCalMonth, airDate, airCalTitle, airCalGrid, airCalPrev, airCalNext);
+  }
+
+  function showAirCal() {
+    airCalMonth = startOfDay(new Date(airDate.getFullYear(), airDate.getMonth(), 1));
+    renderAirCal();
+    airCal.classList.remove("hide");
+  }
+
+  function renderAir() {
+    airDays.innerHTML = dayPickChips(airDate, 'data-air-cal-open="1"');
+    const offset = dayOffsetOf(airDate);
+    airList = airShots(offset);
+    const label = formatCamDate(airDate);
+    airHint.textContent = label + "  无人机定点拍摄  " + airList.length + " 张";
+    airGrid.innerHTML = airList.map((s, i) => `
+      <button class="air-card" type="button" data-air="${i}">
+        <img class="${s.pos}" src="${s.img}" alt="${label} ${s.time} 航拍" />
+        <span>${label} ${s.time}</span>
+      </button>`).join("");
+  }
+
+  function openAir() {
+    closeCam();
+    closeHazard();
+    airDate = startOfDay(new Date());
+    hideAirCal();
+    airPop.classList.remove("open");
+    renderAir();
+    airPlayer.classList.add("open");
+    airPlayer.setAttribute("aria-hidden", "false");
+  }
+
+  function closeAir() {
+    if (!airPlayer) return;
+    hideAirCal();
+    airPlayer.classList.remove("open");
+    airPlayer.setAttribute("aria-hidden", "true");
+    airPop.classList.remove("open");
+  }
+
+  const hazardPage = document.getElementById("hazardPage");
+  const hazardPhotos = document.getElementById("hazardPhotos");
+  const hazardFile = document.getElementById("hazardFile");
+  const hazardTypes = document.getElementById("hazardTypes");
+  const hazardDesc = document.getElementById("hazardDesc");
+  const hazardKindList = ["安全防护", "文明施工", "用电隐患", "消防通道", "其他"];
+  let hazardKind = hazardKindList[0];
+  let hazardImgs = [];
+
+  function renderHazardTypes() {
+    hazardTypes.innerHTML = hazardKindList.map((k) =>
+      `<button class="hazard-type${k === hazardKind ? " on" : ""}" type="button" data-hazard-type="${k}">${k}</button>`
+    ).join("");
+  }
+
+  function renderHazardPhotos() {
+    const add = hazardImgs.length < 6
+      ? `<button class="hazard-add" id="btnHazardAdd" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 7v10M7 12h10"/><rect x="4" y="5" width="16" height="14" rx="2"/></svg>
+          拍照/相册
+        </button>`
+      : "";
+    hazardPhotos.innerHTML = hazardImgs.map((src, i) => `
+      <div class="hazard-thumb">
+        <img src="${src}" alt="隐患照片 ${i + 1}" />
+        <button class="hazard-del" type="button" data-hazard-del="${i}" aria-label="删除">×</button>
+      </div>`).join("") + add;
+  }
+
+  function resetHazard() {
+    hazardImgs.forEach((src) => URL.revokeObjectURL(src));
+    hazardImgs = [];
+    hazardKind = hazardKindList[0];
+    hazardDesc.value = "";
+    if (hazardFile) hazardFile.value = "";
+    renderHazardTypes();
+    renderHazardPhotos();
+  }
+
+  function openHazard() {
+    closeCam();
+    closeAir();
+    resetHazard();
+    hazardPage.classList.add("open");
+    hazardPage.setAttribute("aria-hidden", "false");
+  }
+
+  function closeHazard() {
+    if (!hazardPage) return;
+    hazardPage.classList.remove("open");
+    hazardPage.setAttribute("aria-hidden", "true");
+    resetHazard();
+  }
+
+  document.getElementById("btnHazardBack").addEventListener("click", closeHazard);
+
+  hazardPhotos.addEventListener("click", (e) => {
+    const add = e.target.closest("#btnHazardAdd");
+    if (add) {
+      hazardFile.click();
+      return;
+    }
+    const del = e.target.closest("[data-hazard-del]");
+    if (!del) return;
+    const i = Number(del.dataset.hazardDel);
+    const src = hazardImgs[i];
+    if (src) URL.revokeObjectURL(src);
+    hazardImgs.splice(i, 1);
+    renderHazardPhotos();
+  });
+
+  hazardFile.addEventListener("change", () => {
+    const files = Array.from(hazardFile.files || []);
+    files.forEach((file) => {
+      if (hazardImgs.length >= 6 || !file.type.startsWith("image/")) return;
+      hazardImgs.push(URL.createObjectURL(file));
+    });
+    hazardFile.value = "";
+    renderHazardPhotos();
+  });
+
+  hazardTypes.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-hazard-type]");
+    if (!btn) return;
+    hazardKind = btn.dataset.hazardType;
+    renderHazardTypes();
+  });
+
+  document.getElementById("btnHazardSubmit").addEventListener("click", () => {
+    if (!hazardImgs.length) {
+      showToast("请先拍摄或选择现场照片");
+      return;
+    }
+    showToast("隐患已上报，待整改");
+    closeHazard();
+  });
+
+  document.getElementById("btnAirBack").addEventListener("click", () => {
+    if (airPop.classList.contains("open")) {
+      airPop.classList.remove("open");
+      return;
+    }
+    if (!airCal.classList.contains("hide")) {
+      hideAirCal();
+      return;
+    }
+    closeAir();
+  });
+
+  airDays.addEventListener("click", (e) => {
+    const pick = e.target.closest("[data-air-cal-open]");
+    if (pick) {
+      if (airCal.classList.contains("hide")) showAirCal();
+      else hideAirCal();
+      return;
+    }
+    const btn = e.target.closest("[data-day]");
+    if (!btn) return;
+    hideAirCal();
+    airDate = addDays(new Date(), -Number(btn.dataset.day));
+    airPop.classList.remove("open");
+    renderAir();
+  });
+
+  airCalPrev.addEventListener("click", () => {
+    if (airCalPrev.disabled) return;
+    airCalMonth.setMonth(airCalMonth.getMonth() - 1);
+    renderAirCal();
+  });
+
+  airCalNext.addEventListener("click", () => {
+    if (airCalNext.disabled) return;
+    airCalMonth.setMonth(airCalMonth.getMonth() + 1);
+    renderAirCal();
+  });
+
+  airCalGrid.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-cal]");
+    if (!btn || btn.disabled) return;
+    const [y, m, d] = btn.dataset.cal.split("-").map(Number);
+    airDate = startOfDay(new Date(y, m - 1, d));
+    hideAirCal();
+    airPop.classList.remove("open");
+    renderAir();
+  });
+
+  airGrid.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-air]");
+    if (!btn) return;
+    const shot = airList[Number(btn.dataset.air)];
+    if (!shot) return;
+    airPopImg.src = shot.img;
+    airPopImg.className = shot.pos;
+    airPopMeta.textContent = "定点航拍  " + formatCamDate(airDate) + "  " + shot.time;
+    airPop.classList.add("open");
+  });
+
+  document.getElementById("btnAirClose").addEventListener("click", () => {
+    airPop.classList.remove("open");
+  });
+
+  const landBuildings = siteBuildings.map((b) => ({
+    name: b.name,
+    pct: Math.round((b.done / b.total) * 100),
+    late: b.plan === "滞后"
+  }));
   const landEqIco = {
     crane: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 20h15"/><path d="M7 20V7.5h3.2V20"/><path d="M8.6 7.5H20l-3.2 6.2"/><path d="M16.8 13.7V20"/></svg>`,
     lift: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3.5" width="10" height="17" rx="1.4"/><path d="M12 8.2v2.4M12 8.2l-1.2-1.2M12 8.2l1.2-1.2M12 15.6v-2.4M12 15.6l-1.2 1.2M12 15.6l1.2 1.2"/></svg>`,
     scale: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 17.5h15"/><path d="M7 17.5V9.2h10v8.3"/><path d="M9.2 9.2 12 5.8l2.8 3.4"/></svg>`,
-    drone: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.2" cy="6.2" r="2"/><circle cx="17.8" cy="6.2" r="2"/><circle cx="6.2" cy="17.8" r="2"/><circle cx="17.8" cy="17.8" r="2"/><path d="M8.2 6.2h7.6M8.2 17.8h7.6M6.2 8.2v7.6M17.8 8.2v7.6"/><rect x="10" y="10" width="4" height="4" rx="0.8"/></svg>`
+    drone: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.2" cy="6.2" r="2"/><circle cx="17.8" cy="6.2" r="2"/><circle cx="6.2" cy="17.8" r="2"/><circle cx="17.8" cy="17.8" r="2"/><path d="M8.2 6.2h7.6M8.2 17.8h7.6M6.2 8.2v7.6M17.8 8.2v7.6"/><rect x="10" y="10" width="4" height="4" rx="0.8"/></svg>`,
+    climb: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20V5h10v15"/><path d="M7 9h10M7 13h10M7 17h10"/></svg>`,
+    robot: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="8" width="12" height="10" rx="2"/><circle cx="9.5" cy="12.2" r="1"/><circle cx="14.5" cy="12.2" r="1"/><path d="M12 8V5.5M9 18.2v1.8M15 18.2v1.8"/></svg>`
   };
-  const landDevices = [
-    { name: "智能塔机", on: 2, total: 2, ico: "crane" },
-    { name: "智能电梯", on: 1, total: 2, ico: "lift" },
-    { name: "智能地磅", on: 1, total: 1, ico: "scale" },
-    { name: "无人机", on: 0, total: 1, ico: "drone" }
-  ];
+  const landDevices = siteEquip.map((d) => {
+    const c = equipCount(d);
+    return { name: d.name, on: c.on, total: c.total, ico: d.ico };
+  });
   let landEqIdx = 0;
   let landEqTimer = 0;
 
@@ -566,17 +1630,17 @@
   function renderLandQa() {
     const box = document.getElementById("landQaCard");
     if (!box) return;
-    const d = landQaItems[landQaIdx];
-    const st = landQaState(d.rate);
-    const dots = landQaItems.map((_, n) => `<i class="${n === landQaIdx ? "on" : ""}"></i>`).join("");
+    const d = qaCats[landQaIdx];
+    const st = landQaState(d.now);
+    const dots = qaCats.map((_, n) => `<i class="${n === landQaIdx ? "on" : ""}"></i>`).join("");
     box.innerHTML = `
       <div class="land-eq-top">
         <span class="land-eq-ico">${landQaIco}</span>
         <strong>${d.name}</strong>
-        <em class="land-eq-num ${st}"><i>${d.rate}%</i></em>
+        <em class="land-eq-num ${st}"><i>${d.now}%</i></em>
       </div>
       <div class="land-eq-bot">
-        <span class="land-qa-lab">实测实量合格率</span>
+        <span class="land-qa-lab">本月合格率</span>
       </div>
       <div class="land-eq-dots">${dots}</div>`;
   }
@@ -585,7 +1649,7 @@
     stopLandQa();
     renderLandQa();
     landQaTimer = setInterval(() => {
-      landQaIdx = (landQaIdx + 1) % landQaItems.length;
+      landQaIdx = (landQaIdx + 1) % qaCats.length;
       renderLandQa();
     }, 3000);
   }
@@ -644,35 +1708,17 @@
   function openMapLand() {
     phone.classList.add("is-landscape");
     mapLand.classList.add("open");
-    mapLand.classList.remove("kpis-off", "pins-off");
     mapLand.setAttribute("aria-hidden", "false");
-    document.getElementById("btnLandKpi").setAttribute("aria-label", "隐藏模块");
-    document.getElementById("btnLandPins").setAttribute("aria-label", "隐藏楼栋");
-    startLandKpis();
   }
 
   function closeMapLand() {
     phone.classList.remove("is-landscape");
-    mapLand.classList.remove("open", "kpis-off", "pins-off");
+    mapLand.classList.remove("open");
     mapLand.setAttribute("aria-hidden", "true");
-    stopLandKpis();
   }
 
   document.getElementById("btnMapFull").addEventListener("click", openMapLand);
-  document.getElementById("btnProjSwitch").addEventListener("click", () => {
-    showToast("切换项目");
-  });
   document.getElementById("btnMapBack").addEventListener("click", closeMapLand);
-  document.getElementById("btnLandKpi").addEventListener("click", () => {
-    const off = mapLand.classList.toggle("kpis-off");
-    document.getElementById("btnLandKpi").setAttribute("aria-label", off ? "显示模块" : "隐藏模块");
-    if (off) stopLandKpis();
-    else startLandKpis();
-  });
-  document.getElementById("btnLandPins").addEventListener("click", () => {
-    const off = mapLand.classList.toggle("pins-off");
-    document.getElementById("btnLandPins").setAttribute("aria-label", off ? "显示楼栋" : "隐藏楼栋");
-  });
 
   function tick() {
     const el = document.getElementById("statusTime");
