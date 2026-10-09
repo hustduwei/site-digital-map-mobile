@@ -179,14 +179,22 @@
   }
 
   function alarmTrendSvg(fillId) {
-    const days = ["10/2", "10/3", "10/4", "10/5", "10/6", "10/7", "10/8"];
-    const vals = [2, 3, 6, 16, 13, 8, 4];
-    const w = 220;
+    const hist = { "10/2": 2, "10/3": 3, "10/4": 6, "10/5": 16, "10/6": 13, "10/7": 8, "10/8": 4 };
+    const end = startOfDay(new Date());
+    const days = [];
+    const vals = [];
+    for (let i = 6; i >= 0; i--) {
+      const d = addDays(end, -i);
+      const lab = (d.getMonth() + 1) + "/" + d.getDate();
+      days.push(lab);
+      vals.push(i === 0 ? latestAlarms.length : (hist[lab] != null ? hist[lab] : 3));
+    }
+    const w = 260;
     const h = 78;
-    const pl = 20;
-    const pr = 8;
+    const pl = 24;
+    const pr = 16;
     const pt = 10;
-    const pb = 16;
+    const pb = 20;
     const maxY = 20;
     const n = days.length;
     const xAt = (i) => pl + (i / (n - 1)) * (w - pl - pr);
@@ -199,7 +207,9 @@
       const y = yAt(t).toFixed(1);
       return `<line x1="${pl}" x2="${w - pr}" y1="${y}" y2="${y}"/><text x="${pl - 4}" y="${(+y + 3).toFixed(1)}" text-anchor="end">${t}</text>`;
     }).join("");
-    const labels = days.map((d, i) => `<text x="${xAt(i).toFixed(1)}" y="${h - 2}" text-anchor="middle">${d}</text>`).join("");
+    const labels = days.map((d, i) =>
+      `<text x="${xAt(i).toFixed(1)}" y="${h - 1}" text-anchor="middle">${d}</text>`
+    ).join("");
     const dots = pts.map(([x, y]) =>
       `<circle class="alarm-dot" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.3"/>`
     ).join("");
@@ -229,13 +239,18 @@
   }
 
   function peopleHourSvg() {
-    const hours = ["1:00", "3:00", "5:00", "7:00", "9:00", "11:00", "13:00", "15:00", "17:00", "19:00", "21:00", "23:00"];
-    const workers = [2, 2, 2, 8, 36, 33, 18, 24, 27];
-    const managers = [2, 2, 2, 2, 7, 19, 3, 5, 10];
+    const hourNums = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23];
+    const hours = hourNums.map((h) => h + ":00");
+    const workersAll = [2, 2, 2, 8, 36, 33, 18, 24, 27, 12, 4, 2];
+    const managersAll = [2, 2, 2, 2, 7, 19, 3, 5, 10, 6, 2, 2];
+    const nowH = new Date().getHours();
+    const liveN = hourNums.reduce((n, h, i) => (h <= nowH ? i + 1 : n), 0);
+    const workers = workersAll.slice(0, liveN);
+    const managers = managersAll.slice(0, liveN);
     const w = 320;
     const h = 148;
     const pl = 28;
-    const pr = 8;
+    const pr = 16;
     const pt = 10;
     const pb = 22;
     const maxY = 40;
@@ -244,16 +259,24 @@
     const yAt = (v) => pt + (1 - v / maxY) * (h - pt - pb);
     const wPts = workers.map((v, i) => [xAt(i), yAt(v)]);
     const mPts = managers.map((v, i) => [xAt(i), yAt(v)]);
-    const wLine = smoothPath(wPts);
-    const mLine = smoothPath(mPts);
-    const last = workers.length - 1;
+    const wLine = wPts.length ? smoothPath(wPts) : "";
+    const mLine = mPts.length ? smoothPath(mPts) : "";
+    const last = Math.max(workers.length - 1, 0);
     const base = yAt(0).toFixed(1);
-    const area = `${wLine} L${xAt(last).toFixed(1)},${base} L${xAt(0).toFixed(1)},${base} Z`;
+    const area = wPts.length
+      ? `${wLine} L${xAt(last).toFixed(1)},${base} L${xAt(0).toFixed(1)},${base} Z`
+      : "";
     const grids = [0, 10, 20, 30, 40].map((t) => {
       const y = yAt(t).toFixed(1);
       return `<line x1="${pl}" x2="${w - pr}" y1="${y}" y2="${y}"/><text x="${pl - 4}" y="${(+y + 3).toFixed(1)}" text-anchor="end">${t}</text>`;
     }).join("");
-    const labels = hours.map((d, i) => `<text x="${xAt(i).toFixed(1)}" y="${h - 4}" text-anchor="middle">${d}</text>`).join("");
+    const labels = hours.map((d, i) => {
+      const show = i === 0 || i === ticksN - 1 || i % 2 === 0;
+      if (!show) return "";
+      const anchor = i === 0 ? "start" : i === ticksN - 1 ? "end" : "middle";
+      const dim = i >= liveN ? ` opacity="0.35"` : "";
+      return `<text x="${xAt(i).toFixed(1)}" y="${h - 4}" text-anchor="${anchor}"${dim}>${hourNums[i]}:00</text>`;
+    }).join("");
     return `<svg class="people-hour-svg" viewBox="0 0 ${w} ${h}">
       <defs>
         <linearGradient id="peopleFill" x1="0" y1="0" x2="0" y2="1">

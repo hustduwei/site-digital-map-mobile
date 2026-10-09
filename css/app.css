@@ -2074,10 +2074,11 @@ button, input, textarea { font-family: inherit; color: inherit; }
 .safe-block .home-stats { margin-bottom: 0; }
 
 .alarm-mini {
-  padding: 8px 8px 4px;
+  padding: 8px 12px 8px 10px;
   display: flex;
   flex-direction: column;
   min-width: 0;
+  overflow: hidden;
 }
 
 .alarm-mini-lab {
@@ -2085,15 +2086,16 @@ button, input, textarea { font-family: inherit; color: inherit; }
   font-weight: 600;
   color: #E8EEF6;
   line-height: 1.2;
-  margin: 0 2px 4px;
+  margin: 0 0 4px;
   white-space: nowrap;
 }
 
 .alarm-svg {
   display: block;
   width: 100%;
-  height: 58px;
+  height: 64px;
   flex: 1;
+  overflow: visible;
 }
 
 .alarm-grid line {
@@ -2101,10 +2103,14 @@ button, input, textarea { font-family: inherit; color: inherit; }
   stroke-width: 1;
 }
 
-.alarm-grid text,
-.alarm-x text {
+.alarm-grid text {
   fill: #8A9BB0;
   font-size: 9px;
+}
+
+.alarm-x text {
+  fill: #8A9BB0;
+  font-size: 11px;
 }
 
 .alarm-dot {
@@ -2690,6 +2696,7 @@ button, input, textarea { font-family: inherit; color: inherit; }
   display: block;
   width: 100%;
   height: 132px;
+  overflow: visible;
 }
 
 .crew-item {
