@@ -919,7 +919,7 @@
   });
 
   const pageHome = document.getElementById("page-home");
-  let sheetUp = false;
+  let sheetUp = true;
 
   function setSheetUp(up) {
     sheetUp = !!up;
@@ -945,6 +945,7 @@
 
   document.getElementById("btnSheetToggle").addEventListener("click", () => setSheetUp(!sheetUp));
   window.addEventListener("resize", () => { if (sheetUp) setSheetUp(true); });
+  requestAnimationFrame(() => setSheetUp(true));
 
   document.getElementById("homePanels").addEventListener("click", (e) => {
     const eqBtn = e.target.closest("[data-eq]");
