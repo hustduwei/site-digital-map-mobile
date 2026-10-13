@@ -368,42 +368,45 @@
   function renderSafety() {
     return `
       <div class="safe-block">
-        <h4>今日预警</h4>
+        <h4>预警</h4>
         <div class="home-stats alarm-row">
           <div class="home-stat alert"><b>${latestAlarms.length}</b><span>今日预警数</span></div>
           <div class="home-chart-card alarm-mini">
-            <span class="alarm-mini-lab">近7日预警趋势</span>
+            <span class="home-card-lab">近7日预警趋势</span>
             ${alarmTrendSvg()}
           </div>
         </div>
         ${renderAlarmFeed()}
       </div>
       <div class="safe-block">
-        <h4>作业人数</h4>
-        <div class="home-chart-card crew-overview">${[
-          ["160", "人", "项目人数"],
-          ["40", "人", "正在上班"],
-          ["76", "人", "今日出勤"],
-          ["47.5", "%", "出勤率"]
-        ].map(([n, unit, name]) => `
-          <div class="crew-kpi"><b>${n}<em>${unit}</em></b><span>${name}</span></div>
-        `).join("")}</div>
-      </div>
-      <div class="safe-block">
-        <h4>区域分布</h4>
-        <div class="home-chart-card people-dist" id="peopleDist"></div>
-      </div>
-      <div class="safe-block">
-        <h4>今日时段趋势</h4>
-        <div class="home-chart-card people-hour">
-          <div class="people-hour-hd">
-            <div class="people-hour-leg">
-              <span><i class="g"></i>工人</span>
-              <span><i class="b"></i>管理人员</span>
-            </div>
+        <h4>人员</h4>
+        <div class="safe-stack">
+          <div class="home-chart-card crew-card">
+            <span class="home-card-lab">作业人数</span>
+            <div class="crew-overview">${[
+              ["160", "人", "项目人数"],
+              ["40", "人", "正在上班"],
+              ["76", "人", "今日出勤"],
+              ["47.5", "%", "出勤率"]
+            ].map(([n, unit, name]) => `
+              <div class="crew-kpi"><b>${n}<em>${unit}</em></b><span>${name}</span></div>
+            `).join("")}</div>
           </div>
-          <div class="people-hour-y">人数</div>
-          ${peopleHourSvg()}
+          <div class="home-chart-card people-dist">
+            <span class="home-card-lab">人员区域分布</span>
+            <div id="peopleDist"></div>
+          </div>
+          <div class="home-chart-card people-hour">
+            <div class="people-hour-hd">
+              <span class="home-card-lab">今日时段趋势</span>
+              <div class="people-hour-leg">
+                <span><i class="g"></i>工人</span>
+                <span><i class="b"></i>管理人员</span>
+              </div>
+            </div>
+            <div class="people-hour-y">人数</div>
+            ${peopleHourSvg()}
+          </div>
         </div>
       </div>`;
   }
