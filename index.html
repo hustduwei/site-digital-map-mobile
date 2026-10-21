@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <title>工地数字地图移动端标准版</title>
-  <link rel="stylesheet" href="css/app.css?v=20261010d" />
+  <link rel="stylesheet" href="css/app.css?v=20261021za26" />
 </head>
 <body>
   <div class="stage">
@@ -44,6 +44,7 @@
           <div class="map-land-stage">
             <div class="map-land-fit">
               <img src="img/site-map.jpg" alt="工地数字地图" />
+              <div class="alarm-pins" id="landAlarmPins"></div>
             </div>
           </div>
           <div class="land-top">
@@ -58,6 +59,10 @@
               </div>
             </div>
             <div class="land-actions">
+              <button class="map-land-flat" id="btnMapFlat" type="button" aria-pressed="false">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="1.5"/><path d="M4 14.5 8.2 11l3 2.4L15 9.5 20 14"/></svg>
+                二维地图
+              </button>
               <button class="map-land-back" id="btnMapBack" type="button">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5 8 12l7 7"/></svg>
                 返回
@@ -182,9 +187,11 @@
             </nav>
 
             <main class="pages">
-              <section class="page home-page active is-sheet-up" id="page-home">
+              <section class="page home-page active is-sheet-full" id="page-home">
                 <div class="home-scene">
-                  <div class="home-map" role="img" aria-label="工地数字地图"></div>
+                  <div class="home-map" role="img" aria-label="工地数字地图">
+                    <div class="alarm-pins" id="homeAlarmPins"></div>
+                  </div>
                   <div class="home-top">
                     <div class="home-project-row">
                       <div class="home-project">向阳村项目智能建造管理平台</div>
@@ -202,30 +209,20 @@
                     </div>
                   </div>
                 </div>
-                <div class="home-gutter-mask" aria-hidden="true"></div>
-                <button class="home-sheet-toggle" id="btnSheetToggle" type="button">
-                  <svg class="ico-pull" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14l6-6 6 6"/></svg>
-                  <svg class="ico-expand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10l6 6 6-6"/></svg>
-                  <span class="lab-pull">拉起</span>
-                  <span class="lab-expand">展开</span>
-                </button>
-                <div class="home-sheet">
+                <div class="home-sheet" id="homeSheet">
+                  <div class="home-sheet-handle" id="sheetHandle" role="button" aria-label="拖动调整浮窗"></div>
                   <div class="home-mods" id="homeMods">
                     <button class="home-mod on" data-mod="safety" type="button">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3.5 19 6.2v5.4c0 4.4-3 7.4-7 8.9-4-1.5-7-4.5-7-8.9V6.2z"/><path d="M8.8 12.2 11 14.4l4.4-4.6"/></svg>
-                      <span>安全管理</span>
-                    </button>
-                    <button class="home-mod" data-mod="quality" type="button">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6.2" y="3.8" width="11.6" height="16.4" rx="2"/><path d="M9 3.8h6v2.6H9z"/><path d="M8.7 12.4 10.8 14.5l4.6-4.8"/></svg>
-                      <span>质量管理</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 4.6H4.8v3.4M15.8 4.6h3.4v3.4M8.2 19.4H4.8v-3.4M15.8 19.4h3.4v-3.4"/><path d="M7.2 12s2.2-3.4 4.8-3.4 4.8 3.4 4.8 3.4-2.2 3.4-4.8 3.4S7.2 12 7.2 12z"/><circle cx="12" cy="12" r="1.5"/></svg>
+                      智眸
                     </button>
                     <button class="home-mod" data-mod="progress" type="button">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M12 8v4.2l3 1.6"/></svg>
-                      <span>进度管理</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6.4" y="5.2" width="11.2" height="14.4" rx="2"/><path d="M9.2 5.2V4.2h5.6v1"/><path d="M8.9 12.6 10.8 14.5l4.2-4.5"/></svg>
+                      智巡
                     </button>
                     <button class="home-mod" data-mod="equip" type="button">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 20h15"/><path d="M7 20V7.5h3.2V20"/><path d="M8.6 7.5H20l-3.2 6.2"/><path d="M16.8 13.7V20"/><circle cx="16.8" cy="11.2" r="1.1"/></svg>
-                      <span>装备管控</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6.4" y="7.6" width="11.2" height="9.4" rx="2.2"/><circle cx="10" cy="12.2" r="1.15"/><circle cx="14" cy="12.2" r="1.15"/><path d="M12 7.6V4.8M12 4.8h2.4M8.4 17v2.4M15.6 17v2.4"/></svg>
+                      智控
                     </button>
                   </div>
                   <div class="home-panels" id="homePanels"></div>
@@ -265,7 +262,7 @@
                       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="3.5" width="6.2" height="17" rx="1.2"/><rect x="13.3" y="3.5" width="6.2" height="17" rx="1.2"/><path d="M7.6 9.2v-2.4M7.6 9.2l-1.2-1.2M7.6 9.2l1.2-1.2M16.4 14.8v2.4M16.4 14.8l-1.2 1.2M16.4 14.8l1.2 1.2"/></svg>
                     </div>
                     <div class="tool-meta">
-                      <strong>垂直调度系统</strong>
+                      <strong>垂直运输调度系统</strong>
                       <p>施工电梯/塔机垂直运输调度</p>
                     </div>
                     <span class="tool-arrow">›</span>
@@ -277,16 +274,6 @@
                     <div class="tool-meta">
                       <strong>水平调度系统</strong>
                       <p>车辆出入场调度管理</p>
-                    </div>
-                    <span class="tool-arrow">›</span>
-                  </div>
-                  <div class="tool-card">
-                    <div class="tool-ico orange">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4 3.8 11.2l7.4 1.6L12.8 20z"/><path d="M11.2 12.8 21 4"/></svg>
-                    </div>
-                    <div class="tool-meta">
-                      <strong>工地地图导航</strong>
-                      <p>施工工地场内区域定位与导航</p>
                     </div>
                     <span class="tool-arrow">›</span>
                   </div>
@@ -324,6 +311,14 @@
             </section>
           </div>
 
+          <div class="people-pop" id="peoplePop" aria-hidden="true">
+            <button class="people-pop-mask" type="button" data-people-close aria-label="关闭"></button>
+            <div class="people-pop-panel" role="dialog" aria-modal="true" aria-labelledby="peoplePopTitle">
+              <div class="people-pop-grip" aria-hidden="true"></div>
+              <div id="peoplePopBody"></div>
+            </div>
+          </div>
+
           <nav class="tabbar" id="tabbar">
             <button class="tab active" data-tab="home">
               <svg viewBox="0 0 24 24"><path d="M4 11.5 12 4l8 7.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1z"/></svg>
@@ -348,6 +343,6 @@
       </div>
     </div>
   </div>
-  <script src="js/app.js?v=20261010d"></script>
+  <script src="js/app.js?v=20261021za26"></script>
 </body>
 </html>
