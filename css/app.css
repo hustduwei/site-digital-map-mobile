@@ -784,6 +784,9 @@ button, input, textarea { font-family: inherit; color: inherit; }
 .map-land.is-flat .alarm-pin.is-map,
 .map-land:not(.is-flat) .alarm-pin.is-flat { display: none; }
 
+.home-map .alarm-pins,
+.home-map .alarm-pin { pointer-events: none; }
+
 .home-map .alarm-pin { gap: 2px; }
 
 .home-map .alarm-pin i {

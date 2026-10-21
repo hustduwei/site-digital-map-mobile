@@ -260,29 +260,46 @@
   }
 
   const inspectAlarms = [
-    { id: "trash", day: "today", src: "drone", type: "道路垃圾", title: "环境报警", desc: "场区道路发现垃圾堆放未清理！", img: "img/alarm-trash.jpg", rel: "1分钟前", at: "2026-10-08 15:21:00", geo: "114.24751233100210,30.53310211883421", home: [38, 24], pin: [32, 78], flat: [34, 86] },
-    { id: "cable", day: "today", src: "cam", type: "电缆拖地", title: "用电报警", desc: "作业面电缆拖地未架空，存在触电隐患！", img: "img/alarm-cable.jpg", rel: "3分钟前", at: "2026-10-08 15:19:00", geo: "114.24738810244102,30.53290155210933", home: [54, 24], pin: [48, 56], flat: [46, 40] },
-    { id: "net", day: "today", src: "snap", type: "安全网缺失", title: "防护报警", desc: "楼层临边安全网缺失，请立即整改！", img: "img/alarm-net.jpg", rel: "12分钟前", at: "2026-10-08 15:10:00", geo: "114.24742027911455,30.53296304904549", home: [70, 24], pin: [22, 48, "left"], flat: [20, 34, "left"] },
-    { id: "soil", day: "today", src: "drone", type: "裸土未覆盖", title: "扬尘报警", desc: "场区裸土未覆盖，扬尘风险较高！", img: "img/alarm-soil.jpg", rel: "1小时前", at: "2026-10-08 14:22:00", geo: "114.24760188412003,30.53322190771208", home: [86, 24], pin: [66, 62], flat: [60, 26] },
+    { id: "trash", day: "today", src: "drone", type: "道路垃圾", title: "环境报警", desc: "场区道路发现垃圾堆放未清理！", img: "img/alarm-trash.jpg", rel: "1分钟前", at: "2026-10-08 15:21:00", geo: "114.24751233100210,30.53310211883421", pin: [32, 78], flat: [34, 86] },
+    { id: "cable", day: "today", src: "cam", type: "电缆拖地", title: "用电报警", desc: "作业面电缆拖地未架空，存在触电隐患！", img: "img/alarm-cable.jpg", rel: "3分钟前", at: "2026-10-08 15:19:00", geo: "114.24738810244102,30.53290155210933", pin: [48, 56], flat: [46, 40] },
+    { id: "net", day: "today", src: "snap", type: "安全网缺失", title: "防护报警", desc: "楼层临边安全网缺失，请立即整改！", img: "img/alarm-net.jpg", rel: "12分钟前", at: "2026-10-08 15:10:00", geo: "114.24742027911455,30.53296304904549", pin: [22, 48, "left"], flat: [20, 34, "left"] },
+    { id: "soil", day: "today", src: "drone", type: "裸土未覆盖", title: "扬尘报警", desc: "场区裸土未覆盖，扬尘风险较高！", img: "img/alarm-soil.jpg", rel: "1小时前", at: "2026-10-08 14:22:00", geo: "114.24760188412003,30.53322190771208", pin: [66, 62], flat: [60, 26] },
     { id: "h-net", day: "hist", src: "snap", type: "安全网缺失", title: "防护报警", desc: "3#楼作业面临边安全网破损缺失。", img: "img/alarm-net.jpg", rel: "昨天 09:30", at: "2026-09-30 09:30:00", geo: "114.24742027911455,30.53296304904549" },
     { id: "h-trash", day: "hist", src: "drone", type: "道路垃圾", title: "环境报警", desc: "场区北侧道路垃圾堆放未及时清运。", img: "img/alarm-trash.jpg", rel: "10/7 16:20", at: "2026-10-07 16:20:00", geo: "114.24749822001145,30.53308044122890" },
     { id: "h-cable", day: "hist", src: "cam", type: "电缆拖地", title: "用电报警", desc: "钢筋加工区电缆拖地，存在漏电风险。", img: "img/alarm-cable.jpg", rel: "10/6 11:08", at: "2026-10-06 11:08:00", geo: "114.24735501988210,30.53284411902341" },
     { id: "h-soil", day: "hist", src: "drone", type: "裸土未覆盖", title: "扬尘报警", desc: "基坑周边裸土未覆盖，扬尘超标。", img: "img/alarm-soil.jpg", rel: "10/5 08:46", at: "2026-10-05 08:46:00", geo: "114.24757700124480,30.53319822009112" }
   ];
 
-  function alarmPin(a, spot, kind) {
+  function alarmPin(a, spot, kind, interactive) {
     const left = spot[2] === "left";
-    return `<button class="alarm-pin is-${kind}${left ? " is-left" : ""}" type="button" style="left:${spot[0]}%;top:${spot[1]}%" data-alarm-pin="${a.id}" aria-label="${a.title}">
+    const tag = interactive ? "button" : "span";
+    const action = interactive ? ` type="button" data-alarm-pin="${a.id}" aria-label="${a.title}"` : ` aria-hidden="true"`;
+    return `<${tag} class="alarm-pin is-${kind}${left ? " is-left" : ""}"${action} style="left:${spot[0]}%;top:${spot[1]}%">
       <i></i><b>${a.title}</b>
-    </button>`;
+    </${tag}>`;
+  }
+
+  function homeSpot(spot) {
+    const map = document.querySelector("#page-home .home-map");
+    const W = map ? map.clientWidth : 0;
+    const H = map ? map.clientHeight : 0;
+    if (!W || !H) return spot;
+    const scale = Math.max(W / 1024, H / 735);
+    const dw = 1024 * scale;
+    const dh = 735 * scale;
+    const x = ((W - dw) / 2 + spot[0] / 100 * dw) / W * 100;
+    const y = ((H - dh) / 2 + spot[1] / 100 * dh) / H * 100;
+    const out = [Math.round(x * 10) / 10, Math.round(y * 10) / 10];
+    if (spot[2]) out.push(spot[2]);
+    return out;
   }
 
   function renderAlarmPins() {
     const today = inspectAlarms.filter((a) => a.day === "today" && a.pin);
     const home = document.getElementById("homeAlarmPins");
     const land = document.getElementById("landAlarmPins");
-    if (home) home.innerHTML = today.map((a) => alarmPin(a, a.home, "home")).join("");
-    if (land) land.innerHTML = today.map((a) => alarmPin(a, a.pin, "map") + alarmPin(a, a.flat, "flat")).join("");
+    if (home) home.innerHTML = today.map((a) => alarmPin(a, homeSpot(a.pin), "home", false)).join("");
+    if (land) land.innerHTML = today.map((a) => alarmPin(a, a.pin, "map", true) + alarmPin(a, a.flat, "flat", true)).join("");
   }
 
   function onAlarmPin(e) {
@@ -1658,7 +1675,10 @@
     renderHomePanel(homeMod);
   });
 
-  window.addEventListener("resize", () => setSheetLevel(sheetLevel, false));
+  window.addEventListener("resize", () => {
+    renderAlarmPins();
+    setSheetLevel(sheetLevel, false);
+  });
   requestAnimationFrame(() => setSheetLevel("full"));
 
   document.getElementById("peoplePop").addEventListener("click", (e) => {
@@ -2439,7 +2459,6 @@
   document.getElementById("btnMapFlat").addEventListener("click", () => {
     setMapFlat(!mapLand.classList.contains("is-flat"));
   });
-  document.getElementById("homeAlarmPins").addEventListener("click", onAlarmPin);
   document.getElementById("landAlarmPins").addEventListener("click", onAlarmPin);
   renderAlarmPins();
 
