@@ -21,6 +21,7 @@
   -webkit-tap-highlight-color: transparent;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  overscroll-behavior: none;
 }
 
 .map-land:not(.open),
@@ -48,11 +49,16 @@
   height: 0;
 }
 
-html, body { height: 100%; }
+html, body {
+  height: 100%;
+  min-height: 100%;
+  min-height: 100dvh;
+  background: #d7e2ee;
+  overscroll-behavior: none;
+}
 
 body {
   font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
-  background: #d7e2ee;
   color: var(--text);
   user-select: none;
 }
@@ -84,6 +90,15 @@ button, input, textarea { font-family: inherit; color: inherit; }
   overflow: hidden;
   position: relative;
   box-shadow: 0 12px 40px rgba(22, 58, 120, 0.16);
+}
+
+.phone:has(#page-home.active),
+.phone:has(.map-land.open) {
+  background: rgb(5, 10, 21);
+}
+
+.phone:has(.subpage.is-dark.open) {
+  background: #07111e;
 }
 
 .phone.is-landscape {
@@ -5008,7 +5023,7 @@ button, input, textarea { font-family: inherit; color: inherit; }
   border-radius: 14px;
   background: rgba(6, 14, 24, 0.55);
   color: #fff;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 650;
   cursor: pointer;
 }
@@ -5085,14 +5100,14 @@ button, input, textarea { font-family: inherit; color: inherit; }
 
 .uav-fly span {
   color: #8A9BB0;
-  font-size: 10px;
+  font-size: 13px;
   white-space: nowrap;
 }
 
 .uav-fly b {
   font-weight: 700;
   color: #fff;
-  font-size: 12px;
+  font-size: 14px;
   white-space: nowrap;
 }
 
@@ -5137,10 +5152,10 @@ button, input, textarea { font-family: inherit; color: inherit; }
 .uav-hd .uav-tabs { margin: 0; }
 
 .uav-block .uav-tabs button {
-  height: 26px;
+  height: 28px;
   padding: 0 12px;
   border-radius: 6px;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
 }
 
@@ -5203,14 +5218,14 @@ button, input, textarea { font-family: inherit; color: inherit; }
   align-items: center;
   justify-content: center;
   width: auto;
-  height: 26px;
+  height: 28px;
   margin: 0;
   padding: 0 12px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 8px;
   background: #122033;
   color: #C5D2E2;
-  font-size: 12px;
+  font-size: 13px;
   cursor: pointer;
 }
 
@@ -5244,7 +5259,7 @@ button, input, textarea { font-family: inherit; color: inherit; }
 
 .uav-routes strong { font-size: 14px; }
 
-.uav-routes span { font-size: 12px; color: #C5D2E2; }
+.uav-routes span { font-size: 13px; color: #C5D2E2; }
 
 .uav-routes button.on span { color: #fff; }
 
@@ -5289,7 +5304,7 @@ button, input, textarea { font-family: inherit; color: inherit; }
 .uav-kvs span {
   display: block;
   margin-top: 2px;
-  font-size: 12px;
+  font-size: 13px;
   color: #8A9BB0;
 }
 
@@ -5372,13 +5387,13 @@ button, input, textarea { font-family: inherit; color: inherit; }
 .uav-mission-hd em {
   margin-left: auto;
   font-style: normal;
-  font-size: 12px;
+  font-size: 13px;
   color: #8EC4FF;
 }
 
 .uav-mission p {
   margin: 8px 0 0;
-  font-size: 12px;
+  font-size: 13px;
   color: #8A9BB0;
 }
 
@@ -5399,7 +5414,7 @@ button, input, textarea { font-family: inherit; color: inherit; }
 
 .uav-lab {
   margin: 12px 0 8px;
-  font-size: 12px;
+  font-size: 13px;
   color: #8A9BB0;
 }
 
@@ -5427,7 +5442,7 @@ button, input, textarea { font-family: inherit; color: inherit; }
   margin-left: auto;
   font-style: normal;
   color: #8A9BB0;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .uav-shots {
@@ -5503,7 +5518,7 @@ button, input, textarea { font-family: inherit; color: inherit; }
 
 .uav-gate {
   font-style: normal;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   color: #3DDC97;
   white-space: nowrap;
@@ -5525,7 +5540,7 @@ button, input, textarea { font-family: inherit; color: inherit; }
 }
 
 .uav-risks li {
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.7;
   color: #FF6B6B;
 }
@@ -5849,7 +5864,7 @@ button, input, textarea { font-family: inherit; color: inherit; }
 .crane-board {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 12px;
 }
 
 .crane-card {
@@ -5884,8 +5899,8 @@ button, input, textarea { font-family: inherit; color: inherit; }
 .crane-card-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.8fr 1fr;
-  gap: 4px 8px;
-  margin-top: 6px;
+  gap: 8px 8px;
+  margin-top: 8px;
 }
 
 .crane-card-grid div {
@@ -5897,8 +5912,8 @@ button, input, textarea { font-family: inherit; color: inherit; }
 
 .crane-card-grid span {
   flex: none;
-  font-size: 11px;
-  line-height: 1.2;
+  font-size: 13px;
+  line-height: 1.45;
   color: #8A9BB0;
 }
 
@@ -5906,7 +5921,7 @@ button, input, textarea { font-family: inherit; color: inherit; }
   min-width: 0;
   font-size: 13px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.45;
   color: #F2F6FB;
   white-space: nowrap;
 }
@@ -5919,8 +5934,44 @@ button, input, textarea { font-family: inherit; color: inherit; }
 
 .crane-card-live {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 4px;
+  margin-top: 8px;
 }
+
+.crane-card-pair {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.crane-card-head {
+  display: flex;
+  align-items: center;
+  margin: 0 -10px;
+  padding: 0 10px 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.crane-card-head > strong {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #F2F6FB;
+}
+
+.crane-card-head > strong b {
+  flex: none;
+  margin-left: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.crane-card-head > strong b.is-ok { color: #3DDC97; }
+.crane-card-head > strong b.is-wait { color: #F5C14A; }
+.crane-card-head > strong b.is-off { color: #8A9BB0; }
 
 .lift-card-pair {
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -5935,7 +5986,7 @@ button, input, textarea { font-family: inherit; color: inherit; }
 }
 
 .crane-load-hd span {
-  font-size: 11px;
+  font-size: 13px;
   color: #8A9BB0;
 }
 
@@ -5950,6 +6001,10 @@ button, input, textarea { font-family: inherit; color: inherit; }
 
 .crane-load-hd em {
   color: #8EC4FF;
+}
+
+.crane-load > .crane-load-hd > b {
+  color: #4C9FFF;
 }
 
 .crane-load-rate { margin-left: auto; }
@@ -5969,13 +6024,23 @@ button, input, textarea { font-family: inherit; color: inherit; }
   background: #122033;
 }
 
+.crane-meter + .crane-meter {
+  margin-top: 16px;
+}
+
 .crane-meter .crane-load-hd { justify-content: space-between; }
+
+.crane-meter .crane-load-hd:not(.crane-trip-hd) {
+  flex-wrap: nowrap;
+}
 
 .crane-load-pair {
   display: flex;
   align-items: baseline;
-  gap: 4px;
-  min-width: 0;
+  gap: 2px;
+  flex: none;
+  white-space: nowrap;
+  letter-spacing: -0.04em;
 }
 
 .crane-meter .uav-bar { margin-top: 8px; }
@@ -5988,7 +6053,7 @@ button, input, textarea { font-family: inherit; color: inherit; }
   gap: 3px;
   min-width: 0;
   color: #8A9BB0;
-  font-size: 12px;
+  font-size: 13px;
   white-space: nowrap;
 }
 
@@ -6004,7 +6069,7 @@ button, input, textarea { font-family: inherit; color: inherit; }
 .crane-trip-hd em {
   margin-left: auto;
   flex: none;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .crane-trip-hd em.is-over { color: #FF9A3C; }
@@ -6026,7 +6091,7 @@ button, input, textarea { font-family: inherit; color: inherit; }
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 11px 12px;
+  padding: 14px 12px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
@@ -6091,6 +6156,41 @@ button, input, textarea { font-family: inherit; color: inherit; }
 }
 
 .crane-tabs + .crane-sub { margin-top: 2px; }
+
+.crane-sub-hd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 2px 0 0;
+}
+
+.crane-sub-hd .crane-sub { margin: 0; }
+
+.crane-hist-dates {
+  display: flex;
+  gap: 4px;
+  margin-top: 10px;
+}
+
+.crane-hist-dates button {
+  flex: 1;
+  min-width: 0;
+  height: 28px;
+  padding: 0 2px;
+  border: 0;
+  border-radius: 8px;
+  background: #122033;
+  color: #8A9BB0;
+  font-size: 13px;
+  letter-spacing: -0.03em;
+  cursor: pointer;
+}
+
+.crane-hist-dates button.on {
+  background: rgba(47, 124, 255, 0.85);
+  color: #fff;
+}
 
 .lift-kv b.is-code {
   max-width: 62%;

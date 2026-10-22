@@ -963,28 +963,64 @@
       floor: "8F", height: "22.4m", people: "6人", load: "480kg",
       todayTrips: "86次", monthTrips: "72次", todayTime: "6.4h", monthTime: "7.1h",
       todayPeople: "640人", monthPeople: "580人", todayLoad: "12.80t", monthLoad: "9.40t",
-      power: "8.2h", work: "6.4h", util: "78%"
+      power: "8.2h", work: "6.4h", util: "78%",
+      history: [
+        { date: "10-21", trips: "78次", time: "6.8h", people: "610人", load: "11.20t", power: "8.6h", work: "6.8h", util: "79%" },
+        { date: "10-20", trips: "64次", time: "5.6h", people: "520人", load: "8.40t", power: "7.8h", work: "5.6h", util: "72%" },
+        { date: "10-19", trips: "91次", time: "7.4h", people: "690人", load: "13.10t", power: "9.0h", work: "7.4h", util: "82%" },
+        { date: "10-18", trips: "70次", time: "6.2h", people: "560人", load: "9.10t", power: "8.4h", work: "6.2h", util: "74%" },
+        { date: "10-17", trips: "55次", time: "4.8h", people: "440人", load: "7.20t", power: "7.2h", work: "4.8h", util: "67%" },
+        { date: "10-16", trips: "82次", time: "7.0h", people: "630人", load: "10.80t", power: "8.8h", work: "7.0h", util: "80%" },
+        { date: "10-15", trips: "68次", time: "6.0h", people: "540人", load: "8.80t", power: "8.0h", work: "6.0h", util: "75%" }
+      ]
     },
     {
       id: "12", tab: "1-2", name: "智能电梯1-2", on: false, status: "离线", code: "E03C1CB9F5011822",
       floor: "--", height: "--", people: "--", load: "--",
       todayTrips: "18次", monthTrips: "26次", todayTime: "1.6h", monthTime: "2.8h",
       todayPeople: "96人", monthPeople: "140人", todayLoad: "2.10t", monthLoad: "3.20t",
-      power: "3.2h", work: "1.6h", util: "50%"
+      power: "3.2h", work: "1.6h", util: "50%",
+      history: [
+        { date: "10-21", trips: "22次", time: "2.4h", people: "120人", load: "2.60t", power: "4.4h", work: "2.4h", util: "55%" },
+        { date: "10-20", trips: "28次", time: "3.1h", people: "150人", load: "3.40t", power: "5.2h", work: "3.1h", util: "60%" },
+        { date: "10-19", trips: "16次", time: "1.8h", people: "90人", load: "1.90t", power: "3.6h", work: "1.8h", util: "50%" },
+        { date: "10-18", trips: "30次", time: "3.4h", people: "160人", load: "3.80t", power: "5.6h", work: "3.4h", util: "61%" },
+        { date: "10-17", trips: "24次", time: "2.6h", people: "130人", load: "2.90t", power: "4.8h", work: "2.6h", util: "54%" },
+        { date: "10-16", trips: "19次", time: "2.0h", people: "100人", load: "2.20t", power: "4.0h", work: "2.0h", util: "50%" },
+        { date: "10-15", trips: "27次", time: "2.9h", people: "145人", load: "3.30t", power: "5.0h", work: "2.9h", util: "58%" }
+      ]
     },
     {
       id: "21", tab: "2-1", name: "智能电梯2-1", on: false, status: "离线", code: "E03C1CB9F5011823",
       floor: "--", height: "--", people: "--", load: "--",
       todayTrips: "9次", monthTrips: "18次", todayTime: "0.8h", monthTime: "2.2h",
       todayPeople: "42人", monthPeople: "90人", todayLoad: "0.86t", monthLoad: "1.90t",
-      power: "2.4h", work: "0.8h", util: "33%"
+      power: "2.4h", work: "0.8h", util: "33%",
+      history: [
+        { date: "10-21", trips: "14次", time: "1.6h", people: "70人", load: "1.40t", power: "3.6h", work: "1.6h", util: "44%" },
+        { date: "10-20", trips: "20次", time: "2.4h", people: "100人", load: "2.10t", power: "4.8h", work: "2.4h", util: "50%" },
+        { date: "10-19", trips: "11次", time: "1.2h", people: "55人", load: "1.10t", power: "3.2h", work: "1.2h", util: "38%" },
+        { date: "10-18", trips: "22次", time: "2.6h", people: "110人", load: "2.40t", power: "5.2h", work: "2.6h", util: "50%" },
+        { date: "10-17", trips: "16次", time: "1.8h", people: "80人", load: "1.70t", power: "4.2h", work: "1.8h", util: "43%" },
+        { date: "10-16", trips: "8次", time: "0.9h", people: "40人", load: "0.80t", power: "2.6h", work: "0.9h", util: "35%" },
+        { date: "10-15", trips: "18次", time: "2.1h", people: "92人", load: "1.90t", power: "4.6h", work: "2.1h", util: "46%" }
+      ]
     },
     {
       id: "22", tab: "2-2", name: "智能电梯2-2", on: true, status: "停止", code: "E03C1CB9F5011824",
       floor: "15F", height: "41.8m", people: "0人", load: "0.0kg",
       todayTrips: "24次", monthTrips: "31次", todayTime: "2.1h", monthTime: "3.6h",
       todayPeople: "168人", monthPeople: "220人", todayLoad: "3.50t", monthLoad: "4.80t",
-      power: "4.6h", work: "2.1h", util: "46%"
+      power: "4.6h", work: "2.1h", util: "46%",
+      history: [
+        { date: "10-21", trips: "28次", time: "3.2h", people: "200人", load: "4.20t", power: "6.4h", work: "3.2h", util: "50%" },
+        { date: "10-20", trips: "34次", time: "3.8h", people: "240人", load: "5.10t", power: "7.2h", work: "3.8h", util: "53%" },
+        { date: "10-19", trips: "22次", time: "2.4h", people: "160人", load: "3.40t", power: "5.4h", work: "2.4h", util: "44%" },
+        { date: "10-18", trips: "36次", time: "4.1h", people: "260人", load: "5.60t", power: "7.6h", work: "4.1h", util: "54%" },
+        { date: "10-17", trips: "30次", time: "3.4h", people: "210人", load: "4.60t", power: "6.8h", work: "3.4h", util: "50%" },
+        { date: "10-16", trips: "19次", time: "2.0h", people: "140人", load: "3.10t", power: "4.8h", work: "2.0h", util: "42%" },
+        { date: "10-15", trips: "33次", time: "3.7h", people: "230人", load: "5.00t", power: "7.0h", work: "3.7h", util: "53%" }
+      ]
     }
   ];
 
@@ -1010,34 +1046,45 @@
   function renderLiftCard(u) {
     return `
       <article class="crane-card">
-        <strong>${liftMark()}${u.name}</strong>
-        <div class="crane-card-grid crane-card-live">
-          ${liftCell("当前状态", u.status, liftTone(u.status))}
+        <div class="crane-card-head">
+          <strong>${liftMark()}<span>${u.name}</span><b class="${liftTone(u.status)}">${u.status}</b></strong>
+        </div>
+        <div class="crane-card-grid crane-card-pair">
           ${liftCell("当前楼层", u.floor)}
           ${liftCell("当前高度", u.height)}
-        </div>
-        <div class="crane-card-grid crane-card-live lift-card-pair">
           ${liftCell("当前人数", u.people)}
           ${liftCell("当前载重", u.load)}
         </div>
       </article>`;
   }
 
+  function liftWorkMeters(day, avg) {
+    return [
+      craneCompareMeter("循环次数", day.trips, avg.monthTrips, "次", "近30天日均"),
+      craneCompareMeter("运行时长", day.time, avg.monthTime, "h", "近30天日均"),
+      craneCompareMeter("运送人数", day.people, avg.monthPeople, "人", "近30天日均"),
+      craneCompareMeter("累计载重", day.load, avg.monthLoad, "t", "近30天日均"),
+      craneMeter([
+        ["通电时长", day.power, false],
+        ["运行时长", day.work, false],
+        ["作业利用率", day.util, true]
+      ], parseInt(day.util, 10) || 0)
+    ].join("");
+  }
+
   function renderLift() {
     const u = liftUnits.find((c) => c.id === liftTab) || liftUnits[0];
     const tabs = liftUnits.map((c) => `
       <button type="button" class="${c.id === u.id ? "on" : ""}" data-lift-tab="${c.id}">${liftMark()}${c.tab}</button>`).join("");
-    const meters = [
-      craneCompareMeter("循环次数", u.todayTrips, u.monthTrips, "次", "近30天日均"),
-      craneCompareMeter("运行时长", u.todayTime, u.monthTime, "h", "近30天日均"),
-      craneCompareMeter("运送人数", u.todayPeople, u.monthPeople, "人", "近30天日均"),
-      craneCompareMeter("累计载重", u.todayLoad, u.monthLoad, "t", "近30天日均"),
-      craneMeter([
-        ["通电时长", u.power, false],
-        ["运行时长", u.work, false],
-        ["作业利用率", u.util, true]
-      ], parseInt(u.util, 10) || 0)
-    ].join("");
+    const meters = liftWorkMeters({
+      trips: u.todayTrips,
+      time: u.todayTime,
+      people: u.todayPeople,
+      load: u.todayLoad,
+      power: u.power,
+      work: u.work,
+      util: u.util
+    }, u);
     return `
       <section class="uav-block">
         <h4>设备总览</h4>
@@ -1046,11 +1093,33 @@
       <section class="uav-block">
         <h4>单机详情</h4>
         <div class="crane-tabs">${tabs}</div>
-        <h5 class="crane-sub">今日工作信息</h5>
+        <div class="crane-sub-hd">
+          <h5 class="crane-sub">今日工作信息</h5>
+          <button class="uav-today-btn" type="button" data-lift-history>历史数据</button>
+        </div>
         ${meters}
         <h5 class="crane-sub">设备信息</h5>
         <div class="crane-info">${liftInfo("升降机编号", u.code)}</div>
       </section>`;
+  }
+
+  let liftHistDate = "";
+
+  function openLiftHistory(date) {
+    const u = liftUnits.find((c) => c.id === liftTab) || liftUnits[0];
+    const day = u.history.find((d) => d.date === (date || liftHistDate)) || u.history[0];
+    liftHistDate = day.date;
+    openSheet(`
+      <div class="people-pop-hd">
+        <strong id="peoplePopTitle">历史数据</strong>
+        <button class="people-pop-close" type="button" data-people-close aria-label="关闭">×</button>
+      </div>
+      <p class="uav-lab">${u.name} · 不含今日</p>
+      <div class="crane-hist-dates">
+        ${u.history.map((d) => `
+          <button type="button" class="${d.date === day.date ? "on" : ""}" data-lift-date="${d.date}">${d.date}</button>`).join("")}
+      </div>
+      ${liftWorkMeters(day, u)}`);
   }
 
   function openLiftPage() {
@@ -1071,7 +1140,16 @@
       power: "8.6h", work: "4.8h", util: "56%",
       avgWeight: "1.00t", avgRate: "32%", maxWeight: "2.40t", avgTime: "3.5分钟", monthTime: "4.1分钟",
       slew: "56.48°", radius: "44.81m", height: "27.00m",
-      violations: "0次", alarms: "0次"
+      violations: "0次", alarms: "0次",
+      history: [
+        { date: "10-21", trips: "9次", weight: "8.60t", avgTime: "3.8分钟", power: "7.5h", work: "4.6h", util: "61%", avgWeight: "0.96t", maxWeight: "2.10t", avgRate: "34%" },
+        { date: "10-20", trips: "7次", weight: "6.40t", avgTime: "4.6分钟", power: "7.9h", work: "3.8h", util: "48%", avgWeight: "0.91t", maxWeight: "1.80t", avgRate: "28%" },
+        { date: "10-19", trips: "11次", weight: "9.80t", avgTime: "3.2分钟", power: "7.5h", work: "5.4h", util: "72%", avgWeight: "0.89t", maxWeight: "2.60t", avgRate: "41%" },
+        { date: "10-18", trips: "8次", weight: "7.20t", avgTime: "4.0分钟", power: "7.6h", work: "4.1h", util: "54%", avgWeight: "0.90t", maxWeight: "2.20t", avgRate: "30%" },
+        { date: "10-17", trips: "6次", weight: "5.10t", avgTime: "5.1分钟", power: "7.8h", work: "3.2h", util: "41%", avgWeight: "0.85t", maxWeight: "1.60t", avgRate: "22%" },
+        { date: "10-16", trips: "10次", weight: "9.20t", avgTime: "3.6分钟", power: "7.9h", work: "5.0h", util: "63%", avgWeight: "0.92t", maxWeight: "2.40t", avgRate: "36%" },
+        { date: "10-15", trips: "8次", weight: "7.80t", avgTime: "4.3分钟", power: "7.7h", work: "4.4h", util: "57%", avgWeight: "0.98t", maxWeight: "2.00t", avgRate: "31%" }
+      ]
     },
     {
       id: "3", tab: "2#塔机", name: "2#塔机", status: "工作中", driver: "陈浩",
@@ -1080,7 +1158,16 @@
       power: "7.4h", work: "5.1h", util: "69%",
       avgWeight: "0.56t", avgRate: "28%", maxWeight: "1.80t", avgTime: "4.2分钟", monthTime: "3.6分钟",
       slew: "112.36°", radius: "31.20m", height: "46.50m",
-      violations: "0次", alarms: "0次"
+      violations: "0次", alarms: "0次",
+      history: [
+        { date: "10-21", trips: "12次", weight: "7.10t", avgTime: "3.2分钟", power: "7.3h", work: "5.4h", util: "74%", avgWeight: "0.59t", maxWeight: "1.60t", avgRate: "31%" },
+        { date: "10-20", trips: "10次", weight: "6.20t", avgTime: "3.8分钟", power: "7.3h", work: "4.8h", util: "66%", avgWeight: "0.62t", maxWeight: "1.40t", avgRate: "26%" },
+        { date: "10-19", trips: "13次", weight: "8.40t", avgTime: "3.0分钟", power: "7.2h", work: "5.8h", util: "81%", avgWeight: "0.65t", maxWeight: "2.10t", avgRate: "38%" },
+        { date: "10-18", trips: "9次", weight: "5.60t", avgTime: "4.1分钟", power: "7.2h", work: "4.2h", util: "58%", avgWeight: "0.62t", maxWeight: "1.50t", avgRate: "24%" },
+        { date: "10-17", trips: "11次", weight: "6.90t", avgTime: "3.5分钟", power: "7.1h", work: "5.0h", util: "70%", avgWeight: "0.63t", maxWeight: "1.70t", avgRate: "29%" },
+        { date: "10-16", trips: "8次", weight: "4.80t", avgTime: "4.4分钟", power: "6.9h", work: "3.6h", util: "52%", avgWeight: "0.60t", maxWeight: "1.20t", avgRate: "22%" },
+        { date: "10-15", trips: "12次", weight: "7.40t", avgTime: "3.3分钟", power: "7.2h", work: "5.5h", util: "76%", avgWeight: "0.62t", maxWeight: "1.90t", avgRate: "33%" }
+      ]
     },
     {
       id: "4", tab: "3#塔机", name: "3#塔机", status: "工作中", driver: "李明",
@@ -1089,7 +1176,16 @@
       power: "6.2h", work: "2.4h", util: "39%",
       avgWeight: "0.50t", avgRate: "44%", maxWeight: "1.35t", avgTime: "2.8分钟", monthTime: "3.8分钟",
       slew: "18.74°", radius: "22.60m", height: "35.10m",
-      violations: "2次", alarms: "3次"
+      violations: "2次", alarms: "3次",
+      history: [
+        { date: "10-21", trips: "8次", weight: "4.20t", avgTime: "3.4分钟", power: "7.2h", work: "2.6h", util: "36%", avgWeight: "0.53t", maxWeight: "1.20t", avgRate: "38%" },
+        { date: "10-20", trips: "11次", weight: "6.10t", avgTime: "4.2分钟", power: "7.1h", work: "3.4h", util: "48%", avgWeight: "0.55t", maxWeight: "1.50t", avgRate: "46%" },
+        { date: "10-19", trips: "6次", weight: "3.40t", avgTime: "4.6分钟", power: "7.1h", work: "2.0h", util: "28%", avgWeight: "0.57t", maxWeight: "0.90t", avgRate: "30%" },
+        { date: "10-18", trips: "9次", weight: "5.00t", avgTime: "3.6分钟", power: "6.8h", work: "2.8h", util: "41%", avgWeight: "0.56t", maxWeight: "1.30t", avgRate: "42%" },
+        { date: "10-17", trips: "10次", weight: "5.80t", avgTime: "3.1分钟", power: "6.9h", work: "3.1h", util: "45%", avgWeight: "0.58t", maxWeight: "1.40t", avgRate: "48%" },
+        { date: "10-16", trips: "7次", weight: "3.90t", avgTime: "4.8分钟", power: "6.9h", work: "2.2h", util: "32%", avgWeight: "0.56t", maxWeight: "1.10t", avgRate: "34%" },
+        { date: "10-15", trips: "12次", weight: "6.60t", avgTime: "3.3分钟", power: "7.1h", work: "3.6h", util: "51%", avgWeight: "0.55t", maxWeight: "1.60t", avgRate: "50%" }
+      ]
     }
   ];
 
@@ -1106,30 +1202,27 @@
   }
 
   function renderCraneCard(u) {
-    const rate = u.idle ? 0 : parseInt(u.nowRate, 10) || 0;
-    const load = u.idle ? "无载荷" : u.nowLoad;
-    const loadTone = u.idle ? "is-empty" : "";
-    const rateText = u.idle ? "无载荷" : u.nowRate;
-    return `
-      <article class="crane-card">
-        <strong>${craneMark()}${u.name}</strong>
-        <div class="crane-card-grid">
-          ${craneCell("工作状态", u.status, craneTone(u.status))}
-          ${craneCell("塔司", u.driver, "")}
-          ${craneCell("报警次数", u.alarms, u.alarms === "0次" ? "" : "is-alarm")}
-        </div>
-        <div class="crane-card-grid crane-card-live">
-          ${craneCell("实时回转", u.slew, "")}
-          ${craneCell("实时幅度", u.radius, "")}
-          ${craneCell("实时高度", u.height, "")}
-        </div>
+    const rate = parseInt(u.nowRate, 10) || 0;
+    const load = u.idle ? "" : `
         <div class="crane-load">
           <div class="crane-load-hd">
-            <span>当前吊重</span><b class="${loadTone}">${load}</b>
-            <span class="crane-load-rate">当前负荷</span><em class="${loadTone}">${rateText}</em>
+            <span>当前吊重</span><b>${u.nowLoad}</b>
+            <span class="crane-load-rate">当前负荷</span><em>${u.nowRate}</em>
           </div>
-          ${u.idle ? "" : `<div class="uav-bar"><i style="width:${rate}%"></i></div>`}
+          <div class="uav-bar"><i style="width:${rate}%"></i></div>
+        </div>`;
+    return `
+      <article class="crane-card">
+        <div class="crane-card-head">
+          <strong>${craneMark()}<span>${u.name}</span><b class="${craneTone(u.status)}">${u.status}</b></strong>
         </div>
+        <div class="crane-card-grid crane-card-pair">
+          ${craneCell("塔司", u.driver, "")}
+          ${craneCell("报警次数", u.alarms, u.alarms === "0次" ? "" : "is-alarm")}
+          ${craneCell("实时回转", u.slew, "")}
+          ${craneCell("实时高度", u.height, "")}
+        </div>
+        ${load}
       </article>`;
   }
 
@@ -1170,25 +1263,29 @@
       </div>`;
   }
 
+  function craneWorkMeters(day, avg) {
+    return [
+      craneCompareMeter("吊次", day.trips, avg.monthTrips, "次", "近30天日均"),
+      craneCompareMeter("吊重", day.weight, avg.monthWeight, "t", "近30天日均"),
+      craneCompareMeter("平均吊运时长", day.avgTime, avg.monthTime, "分钟", "近30天日均"),
+      craneMeter([
+        ["总通电时长", day.power, false],
+        ["有效工作时长", day.work, false],
+        ["作业利用率", day.util, true]
+      ], parseInt(day.util, 10) || 0),
+      craneMeter([
+        ["平均单次吊重", day.avgWeight, false],
+        ["最大单次吊重", day.maxWeight, false],
+        ["平均负荷率", day.avgRate, true]
+      ], parseInt(day.avgRate, 10) || 0)
+    ].join("");
+  }
+
   function renderCrane() {
     const u = craneDetails.find((c) => c.id === craneTab) || craneDetails[0];
     const tabs = craneDetails.map((c) => `
       <button type="button" class="${c.id === u.id ? "on" : ""}" data-crane-tab="${c.id}">${craneMark()}${c.tab}</button>`).join("");
-    const meters = [
-      craneCompareMeter("吊次", u.trips, u.monthTrips, "次", "近30天日均"),
-      craneCompareMeter("吊重", u.weight, u.monthWeight, "t", "近30天日均"),
-      craneCompareMeter("平均吊运时长", u.avgTime, u.monthTime, "分钟", "近30天日均"),
-      craneMeter([
-        ["总通电时长", u.power, false],
-        ["有效工作时长", u.work, false],
-        ["作业利用率", u.util, true]
-      ], parseInt(u.util, 10) || 0),
-      craneMeter([
-        ["平均单次吊重", u.avgWeight, false],
-        ["最大单次吊重", u.maxWeight, false],
-        ["平均负荷率", u.avgRate, true]
-      ], parseInt(u.avgRate, 10) || 0)
-    ].join("");
+    const meters = craneWorkMeters(u, u);
     const info = [
       ["产权备案号", u.record],
       ["关联塔吊人脸识别设备", u.face],
@@ -1204,13 +1301,35 @@
       <section class="uav-block">
         <h4>单机详情</h4>
         <div class="crane-tabs">${tabs}</div>
-        <h5 class="crane-sub">今日工作信息</h5>
+        <div class="crane-sub-hd">
+          <h5 class="crane-sub">今日工作信息</h5>
+          <button class="uav-today-btn" type="button" data-crane-history>历史数据</button>
+        </div>
         ${meters}
         <h5 class="crane-sub">设备信息</h5>
         <div class="crane-info">
           ${info.map(([k, v]) => `<div class="crane-info-row"><span>${k}</span><b>${v}</b></div>`).join("")}
         </div>
       </section>`;
+  }
+
+  let craneHistDate = "";
+
+  function openCraneHistory(date) {
+    const u = craneDetails.find((c) => c.id === craneTab) || craneDetails[0];
+    const day = u.history.find((d) => d.date === (date || craneHistDate)) || u.history[0];
+    craneHistDate = day.date;
+    openSheet(`
+      <div class="people-pop-hd">
+        <strong id="peoplePopTitle">历史数据</strong>
+        <button class="people-pop-close" type="button" data-people-close aria-label="关闭">×</button>
+      </div>
+      <p class="uav-lab">${u.name} · 不含今日</p>
+      <div class="crane-hist-dates">
+        ${u.history.map((d) => `
+          <button type="button" class="${d.date === day.date ? "on" : ""}" data-crane-date="${d.date}">${d.date}</button>`).join("")}
+      </div>
+      ${craneWorkMeters(day, u)}`);
   }
 
   function openCranePage() {
@@ -1519,14 +1638,26 @@
       paintSub("无人机", renderUav());
       return;
     }
+    const craneHistoryBtn = e.target.closest("[data-crane-history]");
+    if (craneHistoryBtn) {
+      openCraneHistory();
+      return;
+    }
     const craneTabBtn = e.target.closest("[data-crane-tab]");
     if (craneTabBtn) {
+      closePeoplePop();
       craneTab = craneTabBtn.dataset.craneTab;
       paintSub("智能塔机", renderCrane());
       return;
     }
+    const liftHistoryBtn = e.target.closest("[data-lift-history]");
+    if (liftHistoryBtn) {
+      openLiftHistory();
+      return;
+    }
     const liftTabBtn = e.target.closest("[data-lift-tab]");
     if (liftTabBtn) {
+      closePeoplePop();
       liftTab = liftTabBtn.dataset.liftTab;
       paintSub("智能电梯", renderLift());
       return;
@@ -1690,6 +1821,16 @@
     if (routeBtn) {
       uavRoute = routeBtn.dataset.uavRoute;
       openUavDispatch();
+      return;
+    }
+    const craneDateBtn = e.target.closest("[data-crane-date]");
+    if (craneDateBtn) {
+      openCraneHistory(craneDateBtn.dataset.craneDate);
+      return;
+    }
+    const liftDateBtn = e.target.closest("[data-lift-date]");
+    if (liftDateBtn) {
+      openLiftHistory(liftDateBtn.dataset.liftDate);
       return;
     }
     const uavSend = e.target.closest("[data-uav-send]");
