@@ -4939,6 +4939,17 @@ button, input, textarea { font-family: inherit; color: inherit; }
 .subpage.is-dark .nav-title,
 .subpage.is-dark .nav-btn { color: #E8EEF6; }
 
+.subpage.is-dark .nav-btn.nav-report {
+  width: auto;
+  min-width: 44px;
+  padding: 0 2px;
+  color: #4C9FFF;
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.nav-report[hidden] { display: none; }
+
 .subpage.is-dark .subpage-body {
   padding: 0 0 18px;
   background: #07111e;
@@ -5944,6 +5955,8 @@ button, input, textarea { font-family: inherit; color: inherit; }
 .crane-card-head {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 8px;
   margin: 0 -10px;
   padding: 0 10px 8px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.16);
@@ -5972,6 +5985,20 @@ button, input, textarea { font-family: inherit; color: inherit; }
 .crane-card-head > strong b.is-ok { color: #3DDC97; }
 .crane-card-head > strong b.is-wait { color: #F5C14A; }
 .crane-card-head > strong b.is-off { color: #8A9BB0; }
+
+.crane-info-link {
+  flex: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #4C9FFF;
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.2;
+  white-space: nowrap;
+  cursor: pointer;
+}
 
 .lift-card-pair {
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -6024,9 +6051,198 @@ button, input, textarea { font-family: inherit; color: inherit; }
   background: #122033;
 }
 
-.crane-meter + .crane-meter {
-  margin-top: 16px;
+.crane-chart-leg {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: #C5D0DC;
+  white-space: nowrap;
 }
+
+.crane-chart-leg i {
+  display: inline-block;
+  width: 12px;
+  height: 3px;
+  margin-right: 4px;
+  border-radius: 2px;
+  vertical-align: middle;
+}
+
+.crane-chart-leg i.g { background: #3DDC97; }
+.crane-chart-leg i.b { background: #4C9FFF; }
+.crane-chart-leg i.over { background: #FF9A3C; }
+.crane-chart-leg i.under { background: #4C9FFF; }
+.crane-chart-leg i.avg {
+  height: 0;
+  background: none;
+  border-radius: 0;
+  border-top: 1px dashed #C5D2E2;
+}
+
+.crane-chart-val { font-size: 11px; font-weight: 650; }
+
+.crane-chart {
+  margin: 8px 0 0;
+  padding: 8px 0 2px;
+  border-radius: 10px;
+  background: #122033;
+}
+
+.crane-chart-hd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 0 12px;
+}
+
+.crane-chart-y {
+  margin: 2px 0 0;
+  padding: 0 12px;
+  font-size: 13px;
+  color: #8A9BB0;
+}
+
+.crane-chart-hd span {
+  font-size: 13px;
+  color: #C5D2E2;
+}
+
+.crane-chart-hd b {
+  font-size: 13px;
+  font-weight: 650;
+  color: #8EC4FF;
+  white-space: nowrap;
+}
+
+.crane-chart-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 461 / 104;
+  margin-top: 0;
+  overflow: hidden;
+}
+
+.report-date {
+  margin: -4px 0 12px;
+  font-size: 13px;
+  color: #8A9BB0;
+}
+
+.report-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.report-kpi {
+  padding: 10px 6px;
+  border-radius: 10px;
+  background: #122033;
+  text-align: center;
+}
+
+.report-kpi span {
+  display: block;
+  font-size: 13px;
+  color: #8A9BB0;
+}
+
+.report-kpi b {
+  display: block;
+  margin-top: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #F2F6FB;
+}
+
+.report-note {
+  margin: 12px 0 0;
+  font-size: 13px;
+  line-height: 1.65;
+  color: #C5D0DC;
+}
+
+.report-card {
+  margin-top: 8px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #122033;
+}
+
+.report-card-hd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.report-card-hd strong {
+  font-size: 14px;
+  font-weight: 700;
+  color: #F2F6FB;
+}
+
+.report-card-hd em {
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 650;
+  color: #8A9BB0;
+}
+
+.report-card-hd em.is-alarm { color: #FF6B6B; }
+.report-rows em.is-alarm { color: #FF6B6B; font-style: normal; font-weight: 650; }
+
+.report-rows {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 10px;
+  margin-top: 10px;
+}
+
+.report-rows div { min-width: 0; }
+
+.report-rows span {
+  display: block;
+  font-size: 13px;
+  color: #8A9BB0;
+}
+
+.report-rows b {
+  display: block;
+  margin-top: 2px;
+  font-size: 13px;
+  font-weight: 650;
+  color: #F2F6FB;
+}
+
+.report-rows i {
+  margin-left: 4px;
+  font-style: normal;
+  font-weight: 650;
+}
+
+.report-rows i.is-over { color: #FF9A3C; }
+.report-rows i.is-under { color: #8EC4FF; }
+
+.report-share {
+  width: 100%;
+  height: 40px;
+  border: 0;
+  border-radius: 10px;
+  background: #2F7CFF;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.report-actions { padding-bottom: 16px; }
+
+.crane-chart .alarm-grid text,
+.crane-chart .alarm-x text { font-size: 11px; }
 
 .crane-meter .crane-load-hd { justify-content: space-between; }
 
@@ -6084,6 +6300,11 @@ button, input, textarea { font-family: inherit; color: inherit; }
   border-radius: 10px;
   background: #132033;
   overflow: hidden;
+}
+
+.people-pop .crane-info {
+  margin-top: 12px;
+  background: #122033;
 }
 
 .crane-info-row {
@@ -6166,6 +6387,101 @@ button, input, textarea { font-family: inherit; color: inherit; }
 }
 
 .crane-sub-hd .crane-sub { margin: 0; }
+
+.crane-hist-sub {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.crane-hist-sub .uav-lab { margin: 0; }
+
+.crane-date-wrap {
+  position: relative;
+  flex: none;
+  z-index: 2;
+}
+
+.crane-date-btn {
+  height: 28px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 8px;
+  background: #122033;
+  color: #4C9FFF;
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.crane-date-btn::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 6px;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid currentColor;
+  vertical-align: 1px;
+}
+
+.crane-cal {
+  position: absolute;
+  top: 34px;
+  right: 0;
+  width: 246px;
+  padding: 10px 8px 8px;
+  border-radius: 10px;
+  background: #0E1A2B;
+  border: 1px solid rgba(110, 168, 255, 0.28);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+}
+
+.crane-cal-hd {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 650;
+  color: #F2F6FB;
+}
+
+.crane-cal-week,
+.crane-cal-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.crane-cal-week span,
+.crane-cal-days button,
+.crane-cal-days span,
+.crane-cal-days i {
+  height: 28px;
+  line-height: 28px;
+  font-size: 13px;
+}
+
+.crane-cal-week span { color: #8A9BB0; }
+
+.crane-cal-days button {
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  color: #F2F6FB;
+  cursor: pointer;
+}
+
+.crane-cal-days button.on {
+  background: #2F7CFF;
+  color: #fff;
+}
+
+.crane-cal-days span,
+.crane-cal-days i { color: #3E5168; }
 
 .crane-hist-dates {
   display: flex;
