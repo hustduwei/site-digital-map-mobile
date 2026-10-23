@@ -1130,9 +1130,7 @@
     const cards = metrics.map((m) => {
       const points = series.map((row) => ({ date: row.date, v: row[m.key], label: m.text(row[m.key]) }));
       const avg = points.reduce((sum, p) => sum + p.v, 0) / points.length;
-      const legend = liftChartRange === "30"
-        ? `<span><i class="g"></i>每日</span><span><i class="b"></i>均值 ${m.text(avg)}${m.unit}</span>`
-        : `<span><i class="over"></i>高于</span><span><i class="under"></i>低于</span><span><i class="avg"></i>均值 ${m.text(avg)}${m.unit}</span>`;
+      const legend = `<span><i class="g"></i>每日</span><span><i class="avg"></i>均值 ${m.text(avg)}${m.unit}</span>`;
       return `
         <div class="crane-chart">
           <div class="crane-chart-hd">
@@ -1225,6 +1223,108 @@
       ${liftWorkMeters(day, u)}`);
   }
 
+  function liftReportModel() {
+    const rows = liftUnits.map((u) => {
+      const day = u.history[0];
+      return {
+        u,
+        day,
+        trips: craneDelta(day.trips, u.monthTrips),
+        load: craneDelta(day.load, u.monthLoad),
+        people: craneDelta(day.people, u.monthPeople),
+        util: craneDelta(day.util, craneHistAvg(u, "util") + "%")
+      };
+    });
+    const sum = (pick) => rows.reduce((total, row) => total + cranePlainNum(pick(row)), 0);
+    const byTrips = [...rows].sort((a, b) => cranePlainNum(b.day.trips) - cranePlainNum(a.day.trips));
+    const byLoad = [...rows].sort((a, b) => cranePlainNum(b.day.load) - cranePlainNum(a.day.load));
+    const byUtil = [...rows].sort((a, b) => cranePlainNum(b.day.util) - cranePlainNum(a.day.util));
+    return {
+      rows,
+      date: "2026-" + rows[0].day.date,
+      trips: sum((row) => row.day.trips),
+      load: sum((row) => row.day.load).toFixed(2),
+      people: sum((row) => row.day.people),
+      util: Math.round(rows.reduce((total, row) => total + cranePlainNum(row.day.util), 0) / rows.length),
+      topTrips: byTrips[0],
+      topLoad: byLoad[0],
+      lowUtil: byUtil[byUtil.length - 1]
+    };
+  }
+
+  function liftReportNotes(m) {
+    const lead = m.topTrips.u.id === m.topLoad.u.id
+      ? `${m.topTrips.u.tab}循环次数和载重都是四台里最高，循环 ${m.topTrips.day.trips}，载重 ${m.topTrips.day.load}。`
+      : `${m.topTrips.u.tab}循环次数最高，为 ${m.topTrips.day.trips}。${m.topLoad.u.tab}载重最高，为 ${m.topLoad.day.load}。`;
+    return [
+      `昨日 4 台电梯均有运行，合计循环次数 ${m.trips} 次，合计载重 ${m.load}t，平均利用率 ${m.util}%。`,
+      lead,
+      `${m.lowUtil.u.tab}时长利用率最低，为 ${m.lowUtil.day.util}，运行 ${m.lowUtil.day.time}，循环 ${m.lowUtil.trips.note}、载重 ${m.lowUtil.load.note}。`
+    ];
+  }
+
+  function renderLiftReport() {
+    const m = liftReportModel();
+    const notes = liftReportNotes(m).map((text) => `<p class="report-note">${text}</p>`).join("");
+    const yest = m.rows.map((row) => `
+      <article class="report-card">
+        <div class="report-card-hd">
+          <strong>${row.u.name}</strong>
+        </div>
+        <div class="report-rows">
+          <div><span>循环次数</span><b>${row.day.trips}<i class="${row.trips.cls}">${row.trips.note}</i></b></div>
+          <div><span>累计载重</span><b>${row.day.load}<i class="${row.load.cls}">${row.load.note}</i></b></div>
+          <div><span>运送人数</span><b>${row.day.people}<i class="${row.people.cls}">${row.people.note}</i></b></div>
+          <div><span>时长利用率</span><b>${row.day.util}<i class="${row.util.cls}">${row.util.note}</i></b></div>
+          <div><span>运行时长</span><b>${row.day.time}</b></div>
+        </div>
+      </article>`).join("");
+    return `
+      <section class="uav-block">
+        <h4>昨日作业总结</h4>
+        <p class="report-date">${m.date} · 向阳村项目</p>
+        <div class="report-kpis">
+          <div class="report-kpi"><span>合计循环次数</span><b>${m.trips}次</b></div>
+          <div class="report-kpi"><span>合计载重</span><b>${m.load}t</b></div>
+          <div class="report-kpi"><span>平均利用率</span><b>${m.util}%</b></div>
+        </div>
+        ${notes}
+      </section>
+      <section class="uav-block">
+        <h4>昨日分台作业</h4>
+        ${yest}
+      </section>
+      <section class="uav-block report-actions">
+        <button class="report-share" type="button" data-lift-share>导出分享</button>
+      </section>`;
+  }
+
+  function liftReportPlain() {
+    const m = liftReportModel();
+    const lines = [
+      `电梯日报 ${m.date}`,
+      "向阳村项目",
+      "",
+      "昨日作业总结",
+      ...liftReportNotes(m),
+      `合计循环次数 ${m.trips}次，合计载重 ${m.load}t，合计运送 ${m.people}人，平均利用率 ${m.util}%。`,
+      "",
+      "昨日分台作业"
+    ];
+    m.rows.forEach((row) => {
+      lines.push(`${row.u.name}循环 ${row.day.trips}（${row.trips.note}），载重 ${row.day.load}（${row.load.note}），运送 ${row.day.people}（${row.people.note}），利用率 ${row.day.util}（${row.util.note}），运行 ${row.day.time}。`);
+    });
+    return lines.join("\n");
+  }
+
+  function openLiftReport() {
+    closePeoplePop();
+    subBack = openLiftPage;
+    subpage.classList.remove("is-alarm");
+    subpage.classList.add("is-dark");
+    paintSub("电梯日报", renderLiftReport());
+  }
+
   function openLiftPage() {
     closePeoplePop();
     liftTab = "11";
@@ -1234,6 +1334,7 @@
     subpage.classList.remove("is-alarm");
     subpage.classList.add("is-dark");
     paintSub("智能电梯", renderLift());
+    showDeviceReport("lift");
   }
 
   let craneTab = "2";
@@ -1502,59 +1603,27 @@
     const avgY = y(avg);
     const xLabels = `<g class="alarm-x">${labels}</g>`;
     const grid = `<g class="alarm-grid">${grids}</g>`;
-    if (points.length > 8) {
-      return `<svg class="crane-chart-svg" viewBox="0 0 ${w} ${h}" role="img">
-        <defs>
-          <linearGradient id="${fillId}" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#3DDC97" stop-opacity="0.45"/>
-            <stop offset="100%" stop-color="#3DDC97" stop-opacity="0.04"/>
-          </linearGradient>
-        </defs>
-        ${grid}
-        <path d="${area}" fill="url(#${fillId})"/>
-        <line x1="${pl}" y1="${avgY.toFixed(1)}" x2="${w - pr}" y2="${avgY.toFixed(1)}" stroke="#4C9FFF" stroke-width="1.6"></line>
-        <path d="${line}" fill="none" stroke="#3DDC97" stroke-width="2"></path>
-        ${xLabels}
-      </svg>`;
-    }
-    const over = [];
-    const under = [];
-    const mark = (list, x1, y1, x2, y2) => {
-      list.push(`<line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}"></line>`);
-    };
-    for (let i = 0; i < points.length - 1; i++) {
-      const a = points[i];
-      const b = points[i + 1];
-      const ax = x(i);
-      const ay = y(a.v);
-      const bx = x(i + 1);
-      const by = y(b.v);
-      const aOver = a.v >= avg;
-      const bOver = b.v >= avg;
-      if (aOver === bOver) mark(aOver ? over : under, ax, ay, bx, by);
-      else {
-        const t = (avg - a.v) / (b.v - a.v);
-        const cx = ax + (bx - ax) * t;
-        const cy = avgY;
-        mark(aOver ? over : under, ax, ay, cx, cy);
-        mark(bOver ? over : under, cx, cy, bx, by);
-      }
-    }
-    const dots = points.map((p, i) => {
+    const vals = points.length > 8 ? "" : points.map((p, i) => {
       const px = x(i);
       const py = y(p.v);
       const color = p.v >= avg ? "#FF9A3C" : "#4C9FFF";
       const above = py - 9 >= 8;
       const ly = above ? py - 7 : py + 12;
       const anchor = i === points.length - 1 ? "end" : "middle";
-      return `<circle cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="3.2" fill="${color}"></circle><text class="crane-chart-val" x="${px.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="${anchor}" fill="${color}">${p.label}</text>`;
+      return `<text class="crane-chart-val" x="${px.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="${anchor}" fill="${color}">${p.label}</text>`;
     }).join("");
     return `<svg class="crane-chart-svg" viewBox="0 0 ${w} ${h}" role="img">
+      <defs>
+        <linearGradient id="${fillId}" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#3DDC97" stop-opacity="0.45"/>
+          <stop offset="100%" stop-color="#3DDC97" stop-opacity="0.04"/>
+        </linearGradient>
+      </defs>
       ${grid}
-      <line x1="${pl}" y1="${avgY.toFixed(1)}" x2="${w - pr}" y2="${avgY.toFixed(1)}" stroke="#C5D2E2" stroke-width="1" stroke-dasharray="4 3"></line>
-      <g fill="none" stroke="#FF9A3C" stroke-width="2" stroke-linecap="round">${over.join("")}</g>
-      <g fill="none" stroke="#4C9FFF" stroke-width="2" stroke-linecap="round">${under.join("")}</g>
-      ${dots}
+      <path d="${area}" fill="url(#${fillId})"/>
+      <line x1="${pl}" y1="${avgY.toFixed(1)}" x2="${w - pr}" y2="${avgY.toFixed(1)}" stroke="#8A9BB0" stroke-width="1" stroke-dasharray="4 3"></line>
+      <path d="${line}" fill="none" stroke="#3DDC97" stroke-width="2"></path>
+      ${vals}
       ${xLabels}
     </svg>`;
   }
@@ -1575,9 +1644,7 @@
     const cards = metrics.map((m) => {
       const points = series.map((row) => ({ date: row.date, v: row[m.key], label: m.text(row[m.key]) }));
       const avg = points.reduce((sum, p) => sum + p.v, 0) / points.length;
-      const legend = craneChartRange === "30"
-        ? `<span><i class="g"></i>每日</span><span><i class="b"></i>均值 ${m.text(avg)}${m.unit}</span>`
-        : `<span><i class="over"></i>高于</span><span><i class="under"></i>低于</span><span><i class="avg"></i>均值 ${m.text(avg)}${m.unit}</span>`;
+      const legend = `<span><i class="g"></i>每日</span><span><i class="avg"></i>均值 ${m.text(avg)}${m.unit}</span>`;
       return `
         <div class="crane-chart">
           <div class="crane-chart-hd">
@@ -1806,10 +1873,7 @@
     return lines.join("\n");
   }
 
-  function shareCraneReport() {
-    const m = craneReportModel();
-    const text = craneReportPlain();
-    const name = `塔机日报-${m.date}.txt`;
+  function shareReportFile(title, text, name) {
     const file = new File([text], name, { type: "text/plain" });
     const done = (msg) => showToast(msg);
     const download = () => {
@@ -1822,8 +1886,8 @@
     const copy = () => navigator.clipboard && navigator.clipboard.writeText(text).catch(() => {});
     if (navigator.share) {
       const payload = navigator.canShare && navigator.canShare({ files: [file] })
-        ? { title: `塔机日报 ${m.date}`, text, files: [file] }
-        : { title: `塔机日报 ${m.date}`, text };
+        ? { title, text, files: [file] }
+        : { title, text };
       navigator.share(payload).then(() => done("日报已分享")).catch((err) => {
         if (err && err.name === "AbortError") return;
         download();
@@ -1835,6 +1899,24 @@
     download();
     copy();
     done("日报已导出，并复制到剪贴板");
+  }
+
+  function shareCraneReport() {
+    const m = craneReportModel();
+    shareReportFile(`塔机日报 ${m.date}`, craneReportPlain(), `塔机日报-${m.date}.txt`);
+  }
+
+  function shareLiftReport() {
+    const m = liftReportModel();
+    shareReportFile(`电梯日报 ${m.date}`, liftReportPlain(), `电梯日报-${m.date}.txt`);
+  }
+
+  let deviceReport = "";
+
+  function showDeviceReport(kind) {
+    deviceReport = kind || "";
+    const btn = document.getElementById("btnCraneReport");
+    if (btn) btn.hidden = !deviceReport;
   }
 
   function openCraneReport() {
@@ -1853,7 +1935,7 @@
     subpage.classList.remove("is-alarm");
     subpage.classList.add("is-dark");
     paintSub("智能塔机", renderCrane());
-    document.getElementById("btnCraneReport").hidden = false;
+    showDeviceReport("crane");
   }
 
   function openUavPage() {
@@ -2091,6 +2173,7 @@
     }
     subBack = null;
     subpage.classList.remove("open", "is-alarm", "is-dark");
+    showDeviceReport("");
   }
 
   function pageHtml(name) {
@@ -2123,7 +2206,10 @@
   });
 
   document.getElementById("btnBack").addEventListener("click", closeSub);
-  document.getElementById("btnCraneReport").addEventListener("click", openCraneReport);
+  document.getElementById("btnCraneReport").addEventListener("click", () => {
+    if (deviceReport === "lift") openLiftReport();
+    else openCraneReport();
+  });
 
   document.getElementById("msgList").addEventListener("click", (e) => {
     const item = e.target.closest(".msg-item");
@@ -2164,6 +2250,11 @@
     const craneShare = e.target.closest("[data-crane-share]");
     if (craneShare) {
       shareCraneReport();
+      return;
+    }
+    const liftShare = e.target.closest("[data-lift-share]");
+    if (liftShare) {
+      shareLiftReport();
       return;
     }
     const craneHistoryBtn = e.target.closest("[data-crane-history]");
@@ -3187,8 +3278,6 @@
   renderAlarmPins();
 
   function tick() {
-    const el = document.getElementById("statusTime");
-    if (el) el.textContent = new Date().toTimeString().slice(0, 5);
     if (camPlayer.classList.contains("open")) camTime.textContent = camStamp();
     document.querySelectorAll(".cam-card-pic .cam-time").forEach((n) => { n.textContent = camStamp(); });
   }
