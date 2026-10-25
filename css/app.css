@@ -50,6 +50,16 @@
   height: 0;
 }
 
+html.is-dark-chrome { color-scheme: dark; }
+
+@media (max-width: 480px) {
+  html.is-dark-chrome,
+  html.is-dark-chrome body,
+  html.is-dark-chrome .stage {
+    background: #07111e;
+  }
+}
+
 html, body {
   height: 100%;
   min-height: 100%;
@@ -6164,21 +6174,38 @@ button, input, textarea { font-family: inherit; color: inherit; }
 .crane-meter .crane-load-hd { justify-content: space-between; }
 
 .crane-meter .crane-load-hd:not(.crane-trip-hd) {
-  flex-wrap: nowrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.crane-load-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
 }
 
 .crane-load-pair {
   display: flex;
   align-items: baseline;
-  gap: 2px;
+  gap: 4px;
   flex: none;
   white-space: nowrap;
-  letter-spacing: -0.04em;
 }
 
 .crane-meter .uav-bar { margin-top: 8px; }
 
-.crane-trip-hd { gap: 8px; }
+.crane-trip-hd {
+  align-items: center;
+  gap: 8px;
+}
+
+.crane-trip-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
 
 .crane-trip-line {
   display: flex;

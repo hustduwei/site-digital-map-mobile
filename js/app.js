@@ -1434,11 +1434,15 @@
   }
 
   function craneMeter(pairs, pct, extra) {
+    const line = ([label, value, em]) => `
+      <div class="crane-load-pair"><span>${label}</span>${em ? `<em>${value}</em>` : `<b>${value}</b>`}</div>`;
+    const main = pairs.filter((pair) => !pair[2]);
+    const side = pairs.filter((pair) => pair[2]);
     return `
       <div class="crane-meter${extra ? ` ${extra}` : ""}">
         <div class="crane-load-hd">
-          ${pairs.map(([label, value, em]) => `
-            <div class="crane-load-pair"><span>${label}</span>${em ? `<em>${value}</em>` : `<b>${value}</b>`}</div>`).join("")}
+          <div class="crane-load-lines">${main.map(line).join("")}</div>
+          ${side.map(line).join("")}
         </div>
         <div class="uav-bar"><i style="width:${pct}%"></i></div>
       </div>`;
@@ -1463,7 +1467,10 @@
     return `
       <div class="crane-meter">
         <div class="crane-load-hd crane-trip-hd">
-          <div class="crane-trip-line"><span>${title}</span><b>${num(todayText)}</b><span>${unit}</span><i class="crane-trip-sep" aria-hidden="true"></i><span>${avgName}</span><b>${num(avgText)}</b><span>${unit}</span></div>
+          <div class="crane-trip-lines">
+            <div class="crane-trip-line"><span>${title}</span><b>${num(todayText)}</b><span>${unit}</span></div>
+            <div class="crane-trip-line"><span>${avgName}</span><b>${num(avgText)}</b><span>${unit}</span></div>
+          </div>
           <em class="${noteCls}">${note}</em>
         </div>
         ${bar}
@@ -2129,12 +2136,23 @@
 
   let subBack = null;
 
+  function syncChrome() {
+    const mapOpen = document.getElementById("mapLand").classList.contains("open");
+    const subOpen = subpage.classList.contains("open");
+    const subDark = subpage.classList.contains("is-dark");
+    const dark = mapOpen || (appEl.classList.contains("home-mode") && (!subOpen || subDark));
+    document.documentElement.classList.toggle("is-dark-chrome", dark);
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute("content", dark ? "#07111e" : "#F4F7F9");
+  }
+
   function paintSub(title, html) {
     subTitle.textContent = title;
     subBody.innerHTML = html;
     subpage.classList.add("open");
     const reportBtn = document.getElementById("btnCraneReport");
     if (reportBtn) reportBtn.hidden = true;
+    syncChrome();
   }
 
   function openInspectList(tab) {
@@ -2174,6 +2192,7 @@
     subBack = null;
     subpage.classList.remove("open", "is-alarm", "is-dark");
     showDeviceReport("");
+    syncChrome();
   }
 
   function pageHtml(name) {
@@ -3259,6 +3278,7 @@
     mapLand.hidden = false;
     mapLand.classList.add("open");
     mapLand.setAttribute("aria-hidden", "false");
+    syncChrome();
   }
 
   function closeMapLand() {
@@ -3267,6 +3287,7 @@
     mapLand.classList.remove("open");
     mapLand.setAttribute("aria-hidden", "true");
     mapLand.hidden = true;
+    syncChrome();
   }
 
   document.getElementById("btnMapFull").addEventListener("click", openMapLand);
@@ -3285,6 +3306,7 @@
   renderMsgs();
   renderMine();
   renderHomePanel(homeMod);
+  syncChrome();
   tick();
   setInterval(tick, 1000);
 })();
